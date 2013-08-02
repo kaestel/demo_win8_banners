@@ -1,0 +1,50 @@
+
+/*s-content.css*/
+#hwundwina {margin: 0 auto; z-index: 20; position: relative; overflow: hidden; border: 1px solid #999999; text-align: left;}
+#hwundwina .tracker {background: #9b4f96; position: absolute; bottom: 0; left: 0;}
+#hwundwina h1,
+#hwundwina h2,
+#hwundwina h3,
+#hwundwina h4 {font-family: "SegoeProLight", Arial, sans-serif; font-weight: normal; line-height: 1em; position: absolute; z-index: 3000; color: #ffffff; padding: 0; margin: 0;
+	-webkit-transform: translate3d(0,0,0);
+}
+#hwundwina .learnmore {position: absolute; z-index: 3200; cursor: pointer; width: 145px; height: 24px; background-color: transparent; background-repeat: no-repeat; background-position: top left;
+	-webkit-transform: translate3d(0,0,0);
+}
+#hwundwina .learnmore a {display: block; text-indent: -9999px; height: 24px;}
+#hwundwina .logo {background: transparent url(/img/logo.png) no-repeat top left; position: absolute; left: 20px; bottom: 22px; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;
+	-webkit-transform: translate3d(0,0,0);
+}
+#hwundwina .fullclick {position: absolute; left: 0px; top: 0px; z-index: 5000; cursor: pointer;}
+#hwundwina ul.animation {list-style: none; margin: 0; padding: 0; position: relative;}
+#hwundwina ul.animation li {position: absolute; left: 0; top: 0; background-position: top center; background-repeat: no-repeat; background-color: transparent; display: none; background-size: 100%;
+	-webkit-transform: translate3d(0,0,0);
+}
+#hwundwina .preloader {position: absolute; background-position: right center; background-repeat: no-repeat; background-color: transparent; z-index: 10000; opacity: 0;
+	font-family: "SegoeProLight", Arial, sans-serif; font-weight: normal; line-height: 1em; color: #ffffff; text-align: right;
+}
+#hwundwina {width: 318px; height: 78px;}
+#hwundwina .learnmore {right: 25px; top: 30px;}
+#hwundwina .logo {left: 25px; top: 38px;}
+#hwundwina .fullclick {width: 318px; height: 96px;}
+#hwundwina ul.animation {width: 318px; height: 96px; margin-top: -9px;}
+#hwundwina {background: #9b4f96;}
+#hwundwina .learnmore {background-image: url(/img/bn_learnmore_purple.png);}
+#hwundwina .learnmore a {color: #9b4f96;}
+#hwundwina ul.animation li {width: 318px; height: 96px;}
+#hwundwina h2 {font-size: 28px; left: 20px; top: 26px; width: 278px; text-align: center;}
+#hwundwina h3 {display: none;}
+#hwundwina .logo {display: none; top: 18px; left: 54px; background-size: 100%; background-image: url(/img/logo_large.png); width: 210px; height: 40px;}
+#hwundwina .learnmore {display: none;}
+#hwundwina .preloader {display: none;}
+
+/*s-fonts.css*/
+@font-face {
+	font-family: 'SegoeProLight';
+	src: url('/css/fonts/SegoePro-Light.woff') format('woff'),
+		 url('/css/fonts/SegoePro-Light.ttf') format('truetype'),
+		 url('/css/fonts/SegoePro-Light.svg#SegoePro-Light') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+

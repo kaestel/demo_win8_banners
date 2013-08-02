@@ -1,0 +1,201 @@
+#hwundwina,
+#hwundwinb,
+#hwundwinc,
+#hwundwind {margin: 0 auto; z-index: 20; position: relative; overflow: hidden; border: 1px solid #999999; text-align: left;}
+
+
+#hwundwina h1,
+#hwundwinb h1,
+#hwundwinc h1,
+#hwundwind h1,
+#hwundwina h2,
+#hwundwinb h2,
+#hwundwinc h2,
+#hwundwind h2,
+#hwundwina h3,
+#hwundwinb h3,
+#hwundwinc h3,
+#hwundwind h3,
+#hwundwina h4,
+#hwundwinb h4,
+#hwundwinc h4,
+#hwundwind h4 {font-family: "SegoeProLight", Arial, sans-serif; font-weight: normal; line-height: 1em; position: absolute; z-index: 3000; color: #ffffff; padding: 0; margin: 0;
+	-webkit-transform: translate3d(0,0,0);
+}
+
+#hwundwina p,
+#hwundwinb p,
+#hwundwinc p,
+#hwundwind p {font-family: "SegoeProRegular", Arial, sans-serif; font-weight: normal; line-height: 1em; position: absolute; z-index: 3000; color: #ffffff; padding: 0; margin: 0;}
+
+#hwundwina .learnmore,
+#hwundwinb .learnmore,
+#hwundwinc .learnmore,
+#hwundwind .learnmore {position: absolute; z-index: 3200; cursor: pointer; width: 145px; height: 24px; background-color: transparent; background-repeat: no-repeat; background-position: top left;
+	-webkit-transform: translate3d(0,0,0);
+}
+
+#hwundwina .learnmore a,
+#hwundwinb .learnmore a,
+#hwundwinc .learnmore a,
+#hwundwind .learnmore a {
+	display: block; text-indent: -9999px; height: 24px;
+/*	font-family: "SegoeProLight", Arial, sans-serif; line-height: 1em; padding: 4px 10px 5px; display: block; text-decoration: none;*/
+}
+
+#hwundwina .logo,
+#hwundwinb .logo,
+#hwundwinc .logo,
+#hwundwind .logo {background: transparent url(/funstuff/v8/img/logo.png) no-repeat top left; position: absolute; left: 20px; bottom: 22px; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;
+	-webkit-transform: translate3d(0,0,0);
+}
+
+
+#hwundwina .fullclick,
+#hwundwinb .fullclick,
+#hwundwinc .fullclick,
+#hwundwind .fullclick {position: absolute; left: 0px; top: 0px; z-index: 5000; cursor: pointer;}
+
+#hwundwina ul.animation,
+#hwundwinb ul.animation,
+#hwundwinc ul.animation,
+#hwundwind ul.animation {list-style: none; margin: 0; padding: 0; position: relative;}
+
+#hwundwina ul.animation li,
+#hwundwinb ul.animation li,
+#hwundwinc ul.animation li,
+#hwundwind ul.animation li {position: absolute; left: 0; top: 0; background-position: top center; background-repeat: no-repeat; background-color: transparent; display: none; background-size: 100%;
+	-webkit-transform: translate3d(0,0,0);
+}
+
+#hwundwina .preloader,
+#hwundwinb .preloader,
+#hwundwinc .preloader,
+#hwundwind .preloader {position: absolute; background-position: right center; background-repeat: no-repeat; background-color: transparent; z-index: 10000; opacity: 0;
+	font-family: "SegoeProLight", Arial, sans-serif; font-weight: normal; line-height: 1em; color: #ffffff; text-align: right;
+}
+
+
+
+/* FULL VERSION */
+#hwundwina.full,
+#hwundwinb.full,
+#hwundwinc.full,
+#hwundwind.full {width: 978px; height: 298px;}
+
+#hwundwinc.full,
+#hwundwind.full {height: 978px;}
+
+#hwundwina.full .learnmore,
+#hwundwinb.full .learnmore,
+#hwundwinc.full .learnmore,
+#hwundwind.full .learnmore {right: 20px; bottom: 20px;}
+
+#hwundwina.full .learnmore a,
+#hwundwinb.full .learnmore a,
+#hwundwinc.full .learnmore a,
+#hwundwind.full .learnmore a {}
+
+#hwundwina.full .logo,
+#hwundwinb.full .logo,
+#hwundwinc.full .logo,
+#hwundwind.full .logo {left: 20px; bottom: 22px;}
+
+#hwundwina.full .fullclick,
+#hwundwinb.full .fullclick,
+#hwundwinc.full .fullclick,
+#hwundwind.full .fullclick {width: 978px; height: 298px;}
+
+#hwundwinc.full .fullclick,
+#hwundwind.full .fullclick {height: 978px;}
+
+#hwundwina.full ul.animation,
+#hwundwinb.full ul.animation,
+#hwundwinc.full ul.animation,
+#hwundwind.full ul.animation {width: 978px; height: 298px;}
+
+#hwundwinc.full ul.animation,
+#hwundwind.full ul.animation {height: 978px;}
+
+
+/* TABLET VERSION */
+#hwundwina.tablet,
+#hwundwinb.tablet,
+#hwundwinc.tablet,
+#hwundwind.tablet {width: 766px; height: 233px;}
+
+#hwundwinc.tablet,
+#hwundwind.tablet {height: 766px;}
+
+#hwundwina.tablet .learnmore,
+#hwundwinb.tablet .learnmore,
+#hwundwinc.tablet .learnmore,
+#hwundwind.tablet .learnmore {right: 20px; bottom: 20px;}
+
+#hwundwina.tablet .learnmore a,
+#hwundwinb.tablet .learnmore a,
+#hwundwinc.tablet .learnmore a,
+#hwundwind.tablet .learnmore a {/*font-size: 15px;*/}
+
+#hwundwina.tablet .logo,
+#hwundwinb.tablet .logo,
+#hwundwinc.tablet .logo,
+#hwundwind.tablet .logo {left: 20px; bottom: 22px;}
+
+#hwundwina.tablet .fullclick,
+#hwundwinb.tablet .fullclick,
+#hwundwinc.tablet .fullclick,
+#hwundwind.tablet .fullclick {width: 766px; height: 233px;}
+
+#hwundwinc.tablet .fullclick,
+#hwundwind.tablet .fullclick {height: 766px;}
+
+#hwundwina.tablet ul.animation,
+#hwundwinb.tablet ul.animation,
+#hwundwinc.tablet ul.animation,
+#hwundwind.tablet ul.animation {width: 766px; height: 233px;}
+
+#hwundwinc.tablet ul.animation,
+#hwundwind.tablet ul.animation {height: 766px;}
+
+
+/* MOBILE VERSION */
+#hwundwina.mobile,
+#hwundwinb.mobile,
+#hwundwinc.mobile,
+#hwundwind.mobile {width: 318px; height: 96px;}
+
+#hwundwinc.mobile,
+#hwundwind.mobile {height: 318px;}
+
+#hwundwina.mobile .learnmore,
+#hwundwinb.mobile .learnmore,
+#hwundwinc.mobile .learnmore,
+#hwundwind.mobile .learnmore {right: 25px; top: 39px;}
+
+#hwundwina.mobile .learnmore a,
+#hwundwinb.mobile .learnmore a,
+#hwundwinc.mobile .learnmore a,
+#hwundwind.mobile .learnmore a {/*font-size: 12px;*/}
+
+#hwundwina.mobile .logo,
+#hwundwinb.mobile .logo,
+#hwundwinc.mobile .logo,
+#hwundwind.mobile .logo {left: 25px; top: 38px;}
+
+
+#hwundwina.mobile .fullclick,
+#hwundwinb.mobile .fullclick,
+#hwundwinc.mobile .fullclick,
+#hwundwind.mobile .fullclick {width: 318px; height: 96px;}
+
+#hwundwinc.mobile .fullclick,
+#hwundwind.mobile .fullclick {height: 318px;}
+
+#hwundwina.mobile ul.animation,
+#hwundwinb.mobile ul.animation,
+#hwundwinc.mobile ul.animation,
+#hwundwind.mobile ul.animation {width: 318px; height: 96px;}
+
+#hwundwinc.mobile ul.animation,
+#hwundwind.mobile ul.animation {height: 318px;}

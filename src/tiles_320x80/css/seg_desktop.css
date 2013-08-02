@@ -1,0 +1,54 @@
+
+/*s-content.css*/
+#hwundtiles {margin: 0 auto; z-index: 20; position: relative; overflow: hidden; border: 1px solid #999999; text-align: left;
+	background: #e81123;
+}
+#hwundtiles .tracker {background: #e81123; position: absolute; bottom: 0; left: 0; width: 1px; height: 1px;}
+#hwundtiles h1,
+#hwundtiles h2,
+#hwundtiles h3,
+#hwundtiles h4 {font-weight: normal; line-height: 1em; position: absolute; z-index: 3000; color: #ffffff; padding: 0; margin: 0;
+	font-family: Arial, sans-serif;
+	-webkit-transform: translate3d(0,0,0);
+}
+#hwundtiles p {font-weight: normal; line-height: 1em; position: absolute; z-index: 3000; color: #ffffff; padding: 0; margin: 0;
+	font-family: Arial, sans-serif;
+}
+#hwundtiles .learnmore {position: absolute; z-index: 3200; cursor: pointer; width: 145px; height: 24px; background-color: transparent; background-repeat: no-repeat; background-position: top left; background-image: url(/img/bn_learnmore_red.png);
+	-webkit-transform: translate3d(0,0,0);
+}
+#hwundtiles .learnmore a {display: block; text-indent: -9999px; height: 24px;}
+#hwundtiles .logo {background: transparent url(/img/logo.png) no-repeat top left; position: absolute; left: 20px; bottom: 22px; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;
+	-webkit-transform: translate3d(0,0,0);
+}
+#hwundtiles .fullclick {position: absolute; left: 0px; top: 0px; z-index: 5000; cursor: pointer;}
+#hwundtiles ul.animation {list-style: none; margin: 0; padding: 0; position: relative;}
+#hwundtiles ul.animation li {position: absolute; left: 0; top: 0; background-position: top center; background-repeat: no-repeat; background-color: transparent; display: none; background-size: 100%;
+	-webkit-transform: translate3d(0,0,0);
+}
+#hwundtiles .preloader {position: absolute; background-position: right center; background-repeat: no-repeat; background-color: transparent; z-index: 10000; opacity: 0; font-weight: normal; line-height: 1em; color: #ffffff; text-align: right;
+	font-family: Arial, sans-serif;
+}
+#hwundtiles {}
+#hwundtiles {width: 318px; height: 78px;}
+#hwundtiles .learnmore {right: 25px; top: 30px;}
+#hwundtiles .logo {left: 25px; top: 38px;}
+#hwundtiles .fullclick {width: 318px; height: 78px;}
+#hwundtiles ul.animation {width: 318px; height: 96px;}
+#hwundtiles ul.animation li {width: 318px; height: 96px; margin-top: -9px;}
+#hwundtiles h2 {font-size: 24px; left: 20px; top: 13px; width: 278px;
+	overflow: hidden; text-indent: -9999px;
+	top: -3px; left: 0; width: 320px; height: 80px;
+	background: transparent url(/img/txt_senaste_nytt_a.png) no-repeat top left;
+}
+#hwundtiles h3 {font-size: 24px; left: 20px; top: 13px; width: 278px; display: none;
+	overflow: hidden; text-indent: -9999px;
+	top: -3px; left: 0; width: 320px; height: 80px;
+	background: transparent url(/img/txt_senaste_nytt_b.png) no-repeat top left;
+}
+#hwundtiles p,
+#hwundtiles .tile {display: none;}
+#hwundtiles .logo {display: none; top: 18px; left: 54px; background-size: 100%; background-image: url(/img/logo_large.png); width: 210px; height: 40px;}
+#hwundtiles .learnmore {display: none;}
+#hwundtiles .preloader {display: none;}
+

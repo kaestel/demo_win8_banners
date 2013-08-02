@@ -1,0 +1,72 @@
+#hwundwinb {background: #e81123;}
+#hwundwinb .learnmore {background-image: url(/funstuff/v8/img/bn_learnmore_red.png);}
+#hwundwinb .learnmore a {color: #e81123;}
+
+
+/* FULL */
+#hwundwinb.full ul.animation li {width: 978px; height: 298px;}
+#hwundwinb.full h2 {font-size: 42px; left: 20px; top: 25px; width: 250px;}
+#hwundwinb.full h3 {display: none;}
+#hwundwinb.full p.hint1 {font-size: 14px; left: 725px; top: 80px; width: 180px; padding: 10px 0 10px 40px; background: transparent url(/funstuff/v8/img/gx_tiles_hint_arrow.png) no-repeat left center; display: none;}
+	
+#hwundwinb.full .tile {position: absolute; z-index: 3100; cursor: pointer; display: none;}
+#hwundwinb.full .tile.show {background-color: rgba(255, 255, 255, 1);}
+
+#hwundwinb.full .tile .content {display: none;}
+
+
+#hwundwinb.full .tile.mail {width: 53px; height: 26px; top: 90px; left: 357px;}
+#hwundwinb.full .tile.people {width: 53px; height: 26px; top: 117px; left: 357px;}
+#hwundwinb.full .tile.weather {width: 52px; height: 26px; top: 172px; left: 411px;}
+#hwundwinb.full .tile.photos {width: 52px; height: 26px; top: 144px; left: 411px;}
+#hwundwinb.full .tile.news {width: 52px; height: 26px; top: 199px; left: 411px;}
+
+#hwundwinb.full .easter {position: absolute;}
+#hwundwinb.full .easter_1 {top: 0; left: 0; width: 978px; height: 298px; z-index: 3050;}
+#hwundwinb.full .easter_2 {top: 20px; left: 20px; width: 240px; height: 210px; z-index: 3051;}
+#hwundwinb.full .touchscreen {top: 20px; left: 315px; width: 372px; height: 257px; z-index: 3051;}
+
+#hwundwinb.full .mute {position: absolute; top: 20px; right: 20px; width: 30px; height: 30px; z-index: 3055; background: transparent url(/funstuff/v8/img/bg_speaker.png) no-repeat 0 0;}
+#hwundwinb.full .mute.muted {background-position: 0 -50px;}
+#hwundwinb.full .preloader {font-size: 21px; top: 115px; left: 700px; width: 125px; height: 50px; padding: 0 65px 0 0; background-image: url(/funstuff/v8/img/gx_loader_tiles.gif);}
+#hwundwinb.full.noloader .preloader {display: none;}
+
+
+/* TABLET */
+#hwundwinb.tablet ul.animation li {width: 766px; height: 233px;}
+#hwundwinb.tablet h2 {font-size: 36px; left: 20px; top: 25px; width: 200px;}
+#hwundwinb.tablet h3 {display: none;}
+#hwundwinb.tablet p.hint1 {font-size: 13px; left: 560px; top: 80px; width: 160px; padding: 10px 0 10px 40px; background: transparent url(/funstuff/v8/img/gx_tiles_hint_arrow.png) no-repeat left center; display: none;}
+
+#hwundwinb.tablet .tile {position: absolute; z-index: 3100; display: none;}
+#hwundwinb.tablet .tile.show {background-color: rgba(255, 255, 255, 0.7);}
+
+#hwundwinb.tablet .tile .content {display: none;}
+
+#hwundwinb.tablet .tile.mail {width: 41px; height: 19px; top: 71px; left: 280px;}
+#hwundwinb.tablet .tile.people {width: 41px; height: 20px; top: 92px; left: 280px;}
+#hwundwinb.tablet .tile.weather {width: 41px; height: 19px; top: 135px; left: 323px;}
+#hwundwinb.tablet .tile.photos {width: 41px; height: 20px; top: 113px; left: 323px;}
+#hwundwinb.tablet .tile.news {width: 41px; height: 19px; top: 156px; left: 323px;}
+
+#hwundwinb.tablet .easter {position: absolute;}
+#hwundwinb.tablet .easter_1 {top: 0; left: 0; width: 766px; height: 233px; z-index: 3050;}
+#hwundwinb.tablet .easter_2 {top: 20px; left: 20px; width: 200px; height: 180px; z-index: 3051;}
+#hwundwinb.tablet .touchscreen {top: 16px; left: 245px; width: 293px; height: 202px; z-index: 3051;}
+
+#hwundwinb.tablet .mute {position: absolute; top: 20px; right: 20px; width: 30px; height: 30px; z-index: 3055; background: transparent url(/funstuff/v8/img/bg_speaker.png) no-repeat top left;}
+
+#hwundwinb.tablet .preloader {font-size: 16px; top: 100px; left: 550px; width: 105px; height: 40px; padding: 0 65px 0 0; background-image: url(/funstuff/v8/img/gx_loader_tiles.gif);}
+#hwundwinb.tablet.noloader .preloader {display: none;}
+
+
+/* MOBILE */
+#hwundwinb.mobile ul.animation li {width: 318px; height: 96px;}
+#hwundwinb.mobile h2 {font-size: 24px; left: 20px; top: 22px; width: 278px;}
+#hwundwinb.mobile h3 {font-size: 24px; left: 20px; top: 22px; width: 278px; display: none;}
+#hwundwinb.mobile p,
+#hwundwinb.mobile .tile {display: none;}
+
+#hwundwinb.mobile .logo {display: none; top: 27px; left: 54px; background-size: 100%; background-image: url(/funstuff/v8/img/logo_large.png); width: 210px; height: 40px;}
+#hwundwinb.mobile .learnmore {display: none;}
+#hwundwinb.mobile .preloader {display: none;}

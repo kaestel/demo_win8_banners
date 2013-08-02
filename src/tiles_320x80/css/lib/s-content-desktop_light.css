@@ -1,0 +1,36 @@
+#hwundtiles {margin: 0 auto; z-index: 20; position: relative; overflow: hidden; border: 1px solid #999999; text-align: left;
+	background: #e81123;
+}
+#hwundtiles .tracker {background: #e81123; position: absolute; bottom: 0; left: 0; width: 1px; height: 1px;}
+
+
+#hwundtiles h1,
+#hwundtiles h2,
+#hwundtiles h3,
+#hwundtiles h4 {font-weight: normal; line-height: 1em; position: absolute; z-index: 3000; color: #ffffff; padding: 0; margin: 0;
+	font-family: "SegoeProLight", Arial, sans-serif;
+}
+
+#hwundtiles p {font-weight: normal; line-height: 1em; position: absolute; z-index: 3000; color: #ffffff; padding: 0; margin: 0;
+	font-family: "SegoeProRegular", Arial, sans-serif;
+}
+
+#hwundtiles .learnmore {position: absolute; z-index: 3200; cursor: pointer; width: 145px; height: 24px; background-color: transparent; background-repeat: no-repeat; background-position: top left; background-image: url(/img/bn_learnmore_red.png);}
+#hwundtiles .learnmore a {display: block; text-indent: -9999px; height: 24px;}
+#hwundtiles .logo {background: transparent url(/img/logo.png) no-repeat top left; position: absolute; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;}
+#hwundtiles .fullclick {position: absolute; left: 0px; top: 0px; z-index: 5000; width: 100%; height: 100%; cursor: pointer;}
+
+
+
+/* MOBILE */
+#hwundtiles {width: 318px; height: 78px;}
+#hwundtiles .learnmore {right: 25px; top: 39px;}
+#hwundtiles .logo {left: 25px; top: 38px;}
+#hwundtiles h2 {display: none;}
+#hwundtiles h3 {display: none;}
+#hwundtiles p {display: none;}
+#hwundtiles .logo {top: 18px; left: 54px; background-size: 100%; background-image: url(/img/logo_large.png); width: 210px; height: 40px;}
+#hwundtiles .learnmore {display: none;}
+
+
+

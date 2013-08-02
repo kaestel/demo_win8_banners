@@ -1,0 +1,40 @@
+#hwundwina {margin: 0 auto; z-index: 20; position: relative; overflow: hidden; border: 1px solid #999999; text-align: left;}
+
+#hwundwina .tracker {background: #9b4f96; position: absolute; bottom: 0; left: 0;}
+
+#hwundwina h1,
+#hwundwina h2,
+#hwundwina h3,
+#hwundwina h4 {font-family: "SegoeProLight", Arial, sans-serif; font-weight: normal; line-height: 1em; position: absolute; z-index: 3000; color: #ffffff; padding: 0; margin: 0;}
+
+#hwundwina .learnmore {position: absolute; z-index: 3200; cursor: pointer; width: 145px; height: 24px; background-color: transparent; background-repeat: no-repeat; background-position: top left;}
+
+#hwundwina .learnmore a {display: block; text-indent: -9999px; height: 24px;}
+
+#hwundwina .logo {background: transparent url(/img/logo.png) no-repeat top left; position: absolute; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;}
+
+
+#hwundwina .fullclick {position: absolute; left: 0px; top: 0px; z-index: 5000; width: 100%; height: 100%; cursor: pointer;}
+
+
+
+/* MOBILE */
+#hwundwina {width: 318px; height: 78px;}
+
+#hwundwina .learnmore {right: 25px; top: 30px;}
+
+
+#hwundwina {background: #9b4f96;}
+#hwundwina .learnmore {background-image: url(/img/bn_learnmore_purple.png);}
+
+
+
+
+/* MOBILE */
+#hwundwina h2 {display: none;}
+#hwundwina h3 {display: none;}
+#hwundwina .logo {top: 18px; left: 54px; background-size: 100%; background-image: url(/img/logo_large.png); width: 210px; height: 40px;}
+#hwundwina .learnmore {display: none;}
+
+
+

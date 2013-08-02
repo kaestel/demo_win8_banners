@@ -1,0 +1,55 @@
+#hwundtiles980x300 {margin: 0 auto; z-index: 20; position: relative; overflow: hidden; border: 1px solid #999999; text-align: left;
+	background: #e81123;
+}
+
+
+#hwundtiles980x300 h1,
+#hwundtiles980x300 h2,
+#hwundtiles980x300 h3,
+#hwundtiles980x300 h4 {font-weight: normal; line-height: 1em; position: absolute; z-index: 3000; color: #ffffff; padding: 0; margin: 0;
+	font-family: "SegoeProLight", Arial, sans-serif;
+}
+
+#hwundtiles980x300 p {font-weight: normal; line-height: 1em; position: absolute; z-index: 3000; color: #ffffff; padding: 0; margin: 0;
+	font-family: "SegoeProRegular", Arial, sans-serif;
+}
+
+#hwundtiles980x300 .learnmore {position: absolute; z-index: 3200; cursor: pointer; width: 145px; height: 24px; background-color: transparent; background-repeat: no-repeat; background-position: top left; background-image: url(/funstuff/tiles_980x300/img/bn_learnmore_red.png);}
+#hwundtiles980x300 .learnmore a {display: block; text-indent: -9999px; height: 24px;}
+#hwundtiles980x300 .logo {background: transparent url(/funstuff/tiles_980x300/img/logo.png) no-repeat top left; position: absolute; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;}
+#hwundtiles980x300 .fullclick {position: absolute; left: 0px; top: 0px; z-index: 5000; width: 100%; height: 100%; cursor: pointer;}
+
+
+/* FULL */
+#hwundtiles980x300.full {width: 978px; height: 298px;}
+#hwundtiles980x300.full .learnmore {right: 20px; bottom: 20px;}
+#hwundtiles980x300.full .logo {left: 20px; bottom: 22px;}
+#hwundtiles980x300.full {background: #e81123 url(/funstuff/tiles_980x300/img/sequence/LiveTile_V005_intro_00058.jpg) no-repeat 0px top;}
+#hwundtiles980x300.full h2 {font-size: 42px; left: 20px; top: 25px; width: 250px;}
+#hwundtiles980x300.full h3 {display: none;}
+#hwundtiles980x300.full p {display: none;}
+
+
+
+/* TABLET */
+#hwundtiles980x300.tablet {width: 766px; height: 233px;}
+#hwundtiles980x300.tablet .learnmore {right: 20px; bottom: 20px;}
+#hwundtiles980x300.tablet .logo {left: 20px; bottom: 22px;}
+#hwundtiles980x300.tablet {background: #e81123 url(/funstuff/tiles_980x300/img/sequence/LiveTile_V005_intro_00058.jpg) no-repeat -100px -30px;}
+#hwundtiles980x300.tablet h2 {font-size: 36px; left: 20px; top: 25px; width: 200px;}
+#hwundtiles980x300.tablet h3 {display: none;}
+#hwundtiles980x300.tablet p {display: none;}
+
+
+/* MOBILE */
+#hwundtiles980x300.mobile {width: 318px; height: 96px;}
+#hwundtiles980x300.mobile .learnmore {right: 25px; top: 39px;}
+#hwundtiles980x300.mobile .logo {left: 25px; top: 38px;}
+#hwundtiles980x300.mobile h2 {display: none;}
+#hwundtiles980x300.mobile h3 {display: none;}
+#hwundtiles980x300.mobile p {display: none;}
+#hwundtiles980x300.mobile .logo {top: 27px; left: 54px; background-size: 100%; background-image: url(/funstuff/tiles_980x300/img/logo_large.png); width: 210px; height: 40px;}
+#hwundtiles980x300.mobile .learnmore {display: none;}
+
+
+

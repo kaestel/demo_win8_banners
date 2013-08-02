@@ -1,0 +1,28 @@
+#hwundwina {background: #9b4f96;}
+#hwundwina .learnmore {background-image: url(/funstuff/v8/img/bn_learnmore_purple.png);}
+#hwundwina .learnmore a {color: #9b4f96;}
+
+
+/* FULL */
+#hwundwina.full ul.animation li {width: 978px; height: 298px;}
+#hwundwina.full h2 {font-size: 76px; left: 20px; top: 90px;}
+#hwundwina.full h3 {font-size: 60px; left: 20px; top: 30px; width: 300px; display: none;}
+#hwundwina.full .prerollclick {position: absolute; left: 490px; top: 45px; width: 250px; height: 150px; z-index: 5005; cursor: pointer;}
+#hwundwina.full .preloader {font-size: 21px; top: 115px; left: 700px; width: 125px; height: 50px; padding: 0 65px 0 0; background-image: url(/funstuff/v8/img/gx_loader_intro.gif);}
+
+
+/* TABLET */
+#hwundwina.tablet ul.animation li {width: 766px; height: 233px;}
+#hwundwina.tablet h2 {font-size: 64px; left: 20px; top: 73px;}
+#hwundwina.tablet h3 {font-size: 50px; left: 20px; top: 22px; width: 280px; display: none;}
+#hwundwina.tablet .prerollclick {position: absolute; left: 390px; top: 35px; width: 200px; height: 120px; z-index: 5005; cursor: pointer;}
+#hwundwina.tablet .preloader {font-size: 16px; top: 100px; left: 550px; width: 105px; height: 40px; padding: 0 65px 0 0; background-image: url(/funstuff/v8/img/gx_loader_intro.gif);}
+
+
+/* MOBILE */
+#hwundwina.mobile ul.animation li {width: 318px; height: 96px;}
+#hwundwina.mobile h2 {font-size: 28px; left: 20px; top: 35px; width: 278px; text-align: center;}
+#hwundwina.mobile h3 {display: none;}
+#hwundwina.mobile .logo {display: none; top: 27px; left: 54px; background-size: 100%; background-image: url(/funstuff/v8/img/logo_large.png); width: 210px; height: 40px;}
+#hwundwina.mobile .learnmore {display: none;}
+#hwundwina.mobile .preloader {display: none;}

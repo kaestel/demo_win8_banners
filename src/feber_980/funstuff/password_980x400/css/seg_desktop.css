@@ -1,0 +1,104 @@
+
+/*s-content.css*/
+#hwundpass980x400 {margin: 0 auto; z-index: 20; position: relative; overflow: hidden; border: 1px solid #999999; text-align: left;
+	background: #00188f;
+}
+#hwundpass980x400 h1,
+#hwundpass980x400 h2,
+#hwundpass980x400 h3,
+#hwundpass980x400 h4 {font-weight: normal; line-height: 1em; position: absolute; z-index: 3000; color: #ffffff; padding: 0; margin: 0;
+	font-family: "SegoeProLight", Arial, sans-serif;
+	-webkit-transform: translate3d(0,0,0);
+}
+#hwundpass980x400 p { font-weight: normal; line-height: 1em; position: absolute; z-index: 3000; color: #ffffff; padding: 0; margin: 0;
+	font-family: "SegoeProRegular", Arial, sans-serif;
+}
+#hwundpass980x400 .learnmore {position: absolute; z-index: 3200; cursor: pointer; width: 184px; height: 24px; background-color: transparent; background-repeat: no-repeat; background-position: top left; background-image: url(/funstuff/password_980x400/img/bn_learnmore_blue.png);
+	-webkit-transform: translate3d(0,0,0);
+}
+#hwundpass980x400 .learnmore a {display: block; text-indent: -9999px; height: 24px;}
+#hwundpass980x400 .logo {background: transparent url(/funstuff/password_980x400/img/logo.png) no-repeat top left; position: absolute; left: 20px; bottom: 22px; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;
+	-webkit-transform: translate3d(0,0,0);
+}
+#hwundpass980x400 ul.animation {list-style: none; margin: 0; padding: 0; position: relative;}
+#hwundpass980x400 ul.animation li {position: absolute; left: 0; top: 0; background-position: top center; background-repeat: no-repeat; background-color: transparent; display: none; background-size: 100%;
+	-webkit-transform: translate3d(0,0,0);
+}
+#hwundpass980x400 .preloader {position: absolute; background-position: right center; background-repeat: no-repeat; background-color: transparent; z-index: 10000; opacity: 0; font-weight: normal; line-height: 1em; color: #ffffff; text-align: right;
+	font-family: "SegoeProLight", Arial, sans-serif;
+}
+#hwundpass980x400 .fullclick {position: absolute; left: 0px; top: 0px; z-index: 5000; cursor: pointer;}
+#hwundpass980x400.full {width: 978px; height: 398px;}
+#hwundpass980x400.full .learnmore {right: 30px; bottom: 16px;}
+#hwundpass980x400.full .logo {left: 30px; bottom: 18px;}
+#hwundpass980x400.full ul.animation {width: 978px; height: 398px;}
+#hwundpass980x400.full ul.animation li {width: 978px; height: 398px;}
+#hwundpass980x400.full h2 {font-size: 46px; left: 30px; top: 30px; width: 435px; display: none;}
+#hwundpass980x400.full h3 {display: none;}
+#hwundpass980x400.full p.hint1 {font-size: 16px; left: 30px; top: 155px; width: 180px; display: none; padding: 0 0 50px 0; background: transparent url(/funstuff/password_980x400/img/gx_password_hint_arrow.png) no-repeat left 28px;}
+#hwundpass980x400.full .intro {position: absolute; left: 30px; top: 148px; z-index: 3005; font-size: 72px; color: #ffffff; font-weight: normal; line-height: 1em;
+	font-family: "SegoeProLight", Arial, sans-serif;
+}
+#hwundpass980x400.full ul.views {position: absolute; left: 25px; top: 210px; z-index: 3005; font-size: 0; width: 465px; height: 82px; display: none; padding: 0; margin: 0;}
+#hwundpass980x400.full ul.views li {display: inline-block; vertical-align: top; width: 145px; height: 82px; margin: 0 5px; position: relative;}
+#hwundpass980x400.full ul.views li.view {background-color: transparent; background-repeat: no-repeat; background-position: center center; opacity: 0.5; background-size: 95%;}
+#hwundpass980x400.full ul.views li.view1 {background-image: url(/funstuff/password_980x400/img/pi_password_view1.jpg);}
+#hwundpass980x400.full ul.views li.view2 {background-image: url(/funstuff/password_980x400/img/pi_password_view2.jpg);}
+#hwundpass980x400.full ul.views li.view3 {background-image: url(/funstuff/password_980x400/img/pi_password_view3.jpg);}
+#hwundpass980x400.full ul.views li.view.selected {background-size: 100%; opacity: 1;}
+#hwundpass980x400.full .preloader {font-size: 21px; top: 160px; left: 700px; width: 125px; height: 50px; padding: 0 65px 0 0; background-image: url(/funstuff/password_980x400/img/gx_loader_password.gif);}
+#hwundpass980x400.full .fullclick {width: 978px; height: 398px;}
+#hwundpass980x400.tablet {width: 766px; height: 311px;}
+#hwundpass980x400.tablet .learnmore {right: 30px; bottom: 16px;}
+#hwundpass980x400.tablet .logo {left: 30px; bottom: 18px;}
+#hwundpass980x400.tablet ul.animation {width: 766px; height: 311px;}
+#hwundpass980x400.tablet ul.animation li {width: 766px; height: 311px;}
+#hwundpass980x400.tablet h2 {font-size: 38px; left: 30px; top: 25px; width: 380px; display: none;}
+#hwundpass980x400.tablet h3 {display: none;}
+#hwundpass980x400.tablet p.hint1 {font-size: 14px; left: 30px; top: 115px; width: 180px; display: none; padding: 0 0 40px; background: transparent url(/funstuff/password_980x400/img/gx_password_hint_arrow.png) no-repeat left 28px;}
+#hwundpass980x400.tablet .intro {position: absolute; left: 30px; top: 105px; z-index: 3005; font-size: 72px; color: #ffffff; font-weight: normal; line-height: 1em;
+	font-family: "SegoeProLight", Arial, sans-serif;
+}
+#hwundpass980x400.tablet ul.views {position: absolute; left: 25px; top: 170px; z-index: 3005; font-size: 0; width: 380px; height: 70px; display: none; padding: 0; margin: 0;}
+#hwundpass980x400.tablet ul.views li {display: inline-block; vertical-align: top; width: 115px; height: 70px; margin: 0 5px;}
+#hwundpass980x400.tablet ul.views li.view {background-color: transparent; background-repeat: no-repeat; background-position: center center; opacity: 0.5; background-size: 95%;}
+#hwundpass980x400.tablet ul.views li.view1 {background-image: url(/funstuff/password_980x400/img/pi_password_view1.jpg);}
+#hwundpass980x400.tablet ul.views li.view2 {background-image: url(/funstuff/password_980x400/img/pi_password_view2.jpg);}
+#hwundpass980x400.tablet ul.views li.view3 {background-image: url(/funstuff/password_980x400/img/pi_password_view3.jpg);}
+#hwundpass980x400.tablet ul.views li.view.selected {background-size: 100%; opacity: 1;}
+#hwundpass980x400.tablet .preloader {font-size: 16px; top: 125px; left: 450px; width: 125px; height: 40px; padding: 0 65px 0 0; background-image: url(/funstuff/password_980x400/img/gx_loader_password.gif);}
+#hwundpass980x400.tablet .fullclick {width: 766px; height: 311px;}
+#hwundpass980x400.mobile {width: 318px; height: 318px;}
+#hwundpass980x400.mobile .learnmore {right: 25px; top: 39px;}
+#hwundpass980x400.mobile .logo {left: 25px; top: 38px;}
+#hwundpass980x400.mobile ul.animation {width: 318px; height: 318px;}
+#hwundpass980x400.mobile ul.animation li {width: 318px; height: 318px; margin-top: -50px;}
+#hwundpass980x400.mobile h2 {font-size: 48px; left: 50px; top: 30px; width: 218px; line-height: 54px;}
+#hwundpass980x400.mobile h3 {font-size: 48px; left: 50px; top: 20px; width: 228px; line-height: 50px; display: none;}
+#hwundpass980x400.mobile p.hint1 {display: none;}
+#hwundpass980x400.mobile ul.views {display: none;}
+#hwundpass980x400.mobile .logo {background-size: 100%; background-image: url(/funstuff/password_980x400/img/logo_large.png); bottom: 20px; left: 20px; top: auto; width: 101px; height: 20px;}
+#hwundpass980x400.mobile .logo.exit {top: 130px; left: 50px; bottom: auto; width: 210px; height: 40px;}
+#hwundpass980x400.mobile .learnmore {position: absolute; top: auto; right: auto; width: 184px; left: 50%; margin-left: -92px; bottom: 35px; text-align: center; display: none;}
+#hwundpass980x400.mobile .preloader {display: none;}
+#hwundpass980x400.mobile .fullclick {width: 318px; height: 318px;}
+
+
+/*s-fonts.css*/
+@font-face {
+	font-family: 'SegoeProLight';
+	src: url('/funstuff/password_980x400/css/fonts/SegoePro-Light.woff') format('woff'),
+		 url('/funstuff/password_980x400/css/fonts/SegoePro-Light.ttf') format('truetype'),
+		 url('/funstuff/password_980x400/css/fonts/SegoePro-Light.svg#SegoePro-Light') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'SegoeProRegular';
+	src: url('/funstuff/password_980x400/css/fonts/SegoePro-Regular.woff') format('woff'),
+		 url('/funstuff/password_980x400/css/fonts/SegoePro-Regular.ttf') format('truetype'),
+		 url('/funstuff/password_980x400/css/fonts/SegoePro-Regular.svg#SegoePro') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
