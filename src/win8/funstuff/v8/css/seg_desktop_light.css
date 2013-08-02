@@ -35,7 +35,7 @@
 #hwundwina .logo,
 #hwundwinb .logo,
 #hwundwinc .logo,
-#hwundwind .logo {background: transparent url(/funstuff/v8/img/logo.png) no-repeat top left; position: absolute; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;}
+#hwundwind .logo {background: transparent url(/win8/funstuff/v8/img/logo.png) no-repeat top left; position: absolute; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;}
 #hwundwina .fullclick,
 #hwundwinb .fullclick,
 #hwundwinc .fullclick,
@@ -83,64 +83,64 @@
 #hwundwinc.mobile .logo,
 #hwundwind.mobile .logo {left: 20px; bottom: 22px;}
 #hwundwina {background: #9b4f96;}
-#hwundwina .learnmore {background-image: url(/funstuff/v8/img/bn_learnmore_purple.png);}
+#hwundwina .learnmore {background-image: url(/win8/funstuff/v8/img/bn_learnmore_purple.png);}
 #hwundwinb {background: #e81123;}
-#hwundwinb .learnmore {background-image: url(/funstuff/v8/img/bn_learnmore_red.png);}
+#hwundwinb .learnmore {background-image: url(/win8/funstuff/v8/img/bn_learnmore_red.png);}
 #hwundwinc {background: #e81123;}
-#hwundwinc .learnmore.web {background-image: url(/funstuff/v8/img/bn_learnmore_red_web.png); bottom: 54px; width: 236px;}
-#hwundwinc .learnmore.irl {background-image: url(/funstuff/v8/img/bn_learnmore_red_irl.png); width: 236px; z-index: 5001;}
+#hwundwinc .learnmore.web {background-image: url(/win8/funstuff/v8/img/bn_learnmore_red_web.png); bottom: 54px; width: 236px;}
+#hwundwinc .learnmore.irl {background-image: url(/win8/funstuff/v8/img/bn_learnmore_red_irl.png); width: 236px; z-index: 5001;}
 #hwundwind {background: #00188f;}
-#hwundwind .learnmore {background-image: url(/funstuff/v8/img/bn_learnmore_blue.png); width: 184px;}
-#hwundwina.full {background: #9b4f96 url(/funstuff/v8/img/a/IntroBanner_V003_00084.jpg) no-repeat 220px top;}
+#hwundwind .learnmore {background-image: url(/win8/funstuff/v8/img/bn_learnmore_blue.png); width: 184px;}
+#hwundwina.full {background: #9b4f96 url(/win8/funstuff/v8/img/a/IntroBanner_V003_00084.jpg) no-repeat 220px top;}
 #hwundwina.full h2 {font-size: 76px; left: 20px; top: 90px;}
 #hwundwina.full h3 {display: none;}
 #hwundwina.full .prerollclick {position: absolute; left: 700px; top: 45px; width: 250px; height: 150px; z-index: 5005; cursor: pointer;}
-#hwundwinb.full {background: #e81123 url(/funstuff/v8/img/b/LiveTile_V005_intro_00058.jpg) no-repeat 0px top;}
+#hwundwinb.full {background: #e81123 url(/win8/funstuff/v8/img/b/LiveTile_V005_intro_00058.jpg) no-repeat 0px top;}
 #hwundwinb.full h2 {font-size: 42px; left: 20px; top: 25px; width: 250px;}
 #hwundwinb.full h3 {display: none;}
 #hwundwinb.full p {display: none;}
-#hwundwinc.full {background: #e81123 url(/funstuff/v8/img/c/PCSelector_16FPS_00104.jpg) no-repeat 0px top;}
+#hwundwinc.full {background: #e81123 url(/win8/funstuff/v8/img/c/PCSelector_16FPS_00104.jpg) no-repeat 0px top;}
 #hwundwinc.full h2 {font-size: 86px; left: 40px; top: 45px;}
 #hwundwinc.full h4 {display: none;}
 #hwundwinc.full p {display: none;}
 #hwundwinc.full .comp {display: none;}
-#hwundwind.full {background: #00188f url(/funstuff/v8/img/d/PicturePassword_V004_00041.jpg) no-repeat 0px -100px;}
+#hwundwind.full {background: #00188f url(/win8/funstuff/v8/img/d/PicturePassword_V004_00041.jpg) no-repeat 0px -100px;}
 #hwundwind.full h2 {font-size: 62px; left: 40px; top: 40px;}
 #hwundwind.full h3 {display: none;}
 #hwundwind.full p {display: none;}
 #hwundwind.full .views {display: none;}
-#hwundwina.tablet {background: #9b4f96 url(/funstuff/v8/img/a/IntroBanner_V003_00084.jpg) no-repeat 120px -30px;}
+#hwundwina.tablet {background: #9b4f96 url(/win8/funstuff/v8/img/a/IntroBanner_V003_00084.jpg) no-repeat 120px -30px;}
 #hwundwina.tablet h2 {font-size: 64px; left: 20px; top: 73px;}
 #hwundwina.tablet h3 {display: none;}
 #hwundwina.tablet .prerollclick {position: absolute; left: 610px; top: 0px; width: 156px; height: 170px; z-index: 5005; cursor: pointer;}
-#hwundwinb.tablet {background: #e81123 url(/funstuff/v8/img/b/LiveTile_V005_intro_00058.jpg) no-repeat -100px -30px;}
+#hwundwinb.tablet {background: #e81123 url(/win8/funstuff/v8/img/b/LiveTile_V005_intro_00058.jpg) no-repeat -100px -30px;}
 #hwundwinb.tablet h2 {font-size: 36px; left: 20px; top: 25px; width: 200px;}
 #hwundwinb.tablet h3 {display: none;}
 #hwundwinb.tablet p {display: none;}
-#hwundwinc.tablet {background: #e81123 url(/funstuff/v8/img/c/PCSelector_16FPS_00104.jpg) no-repeat center center;}
+#hwundwinc.tablet {background: #e81123 url(/win8/funstuff/v8/img/c/PCSelector_16FPS_00104.jpg) no-repeat center center;}
 #hwundwinc.tablet h2 {font-size: 66px; left: 40px; top: 45px;}
 #hwundwinc.tablet h4 {display: none;}
 #hwundwinc.tablet p {display: none;}
 #hwundwinc.tablet .comp {display: none;}
-#hwundwind.tablet {background: #00188f url(/funstuff/v8/img/d/PicturePassword_V004_00041.jpg) no-repeat center -200px;}
+#hwundwind.tablet {background: #00188f url(/win8/funstuff/v8/img/d/PicturePassword_V004_00041.jpg) no-repeat center -200px;}
 #hwundwind.tablet h2 {font-size: 46px; left: 40px; top: 40px;}
 #hwundwind.tablet h3 {display: none;}
 #hwundwind.tablet p {display: none;}
 #hwundwind.tablet .views {display: none;}
 #hwundwina.mobile h2 {display: none;}
 #hwundwina.mobile h3 {display: none;}
-#hwundwina.mobile .logo {top: 27px; left: 54px; background-size: 100%; background-image: url(/funstuff/v8/img/logo_large.png); width: 210px; height: 40px;}
+#hwundwina.mobile .logo {top: 27px; left: 54px; background-size: 100%; background-image: url(/win8/funstuff/v8/img/logo_large.png); width: 210px; height: 40px;}
 #hwundwina.mobile .learnmore {display: none;}
 #hwundwinb.mobile h2 {display: none;}
 #hwundwinb.mobile h3 {display: none;}
 #hwundwinb.mobile p {display: none;}
-#hwundwinb.mobile .logo {top: 27px; left: 54px; background-size: 100%; background-image: url(/funstuff/v8/img/logo_large.png); width: 210px; height: 40px;}
+#hwundwinb.mobile .logo {top: 27px; left: 54px; background-size: 100%; background-image: url(/win8/funstuff/v8/img/logo_large.png); width: 210px; height: 40px;}
 #hwundwinb.mobile .learnmore {display: none;}
 #hwundwinc.mobile h2 {font-size: 48px; left: 50px; top: 50px; width: 218px; line-height: 54px;}
 #hwundwinc.mobile h3 {display: none;}
 #hwundwinc.mobile p {display: none;}
 #hwundwinc.mobile .comp {display: none;}
-#hwundwinc.mobile .logo {background-size: 100%; background-image: url(/funstuff/v8/img/logo.png); bottom: 20px; left: 20px; top: auto; width: 101px; height: 20px;}
+#hwundwinc.mobile .logo {background-size: 100%; background-image: url(/win8/funstuff/v8/img/logo.png); bottom: 20px; left: 20px; top: auto; width: 101px; height: 20px;}
 #hwundwind.mobile h2 {font-size: 48px; left: 50px; top: 30px; width: 218px; line-height: 54px;}
 #hwundwind.mobile h3 {display: none;}
 #hwundwind.mobile p {display: none;}
@@ -150,21 +150,21 @@
 /*s-fonts-desktop_light.css*/
 @font-face {
 	font-family: 'SegoeProLight';
-	src: url('/funstuff/v8/css/fonts/SegoePro-Light.eot');
-	src: url('/funstuff/v8/css/fonts/SegoePro-Light.eot?#iefix') format('embedded-opentype'),
-		 url('/funstuff/v8/css/fonts/SegoePro-Light.woff') format('woff'),
-		 url('/funstuff/v8/css/fonts/SegoePro-Light.ttf') format('truetype'),
-		 url('/funstuff/v8/css/fonts/SegoePro-Light.svg#SegoePro-Light') format('svg');
+	src: url('/win8/funstuff/v8/css/fonts/SegoePro-Light.eot');
+	src: url('/win8/funstuff/v8/css/fonts/SegoePro-Light.eot?#iefix') format('embedded-opentype'),
+		 url('/win8/funstuff/v8/css/fonts/SegoePro-Light.woff') format('woff'),
+		 url('/win8/funstuff/v8/css/fonts/SegoePro-Light.ttf') format('truetype'),
+		 url('/win8/funstuff/v8/css/fonts/SegoePro-Light.svg#SegoePro-Light') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
 @font-face {
 	font-family: 'SegoeProRegular';
-	src: url('/funstuff/v8/css/fonts/SegoePro-Regular.eot');
-	src: url('/funstuff/v8/css/fonts/SegoePro-Regular.eot?#iefix') format('embedded-opentype'),
-		 url('/funstuff/v8/css/fonts/SegoePro-Regular.woff') format('woff'),
-		 url('/funstuff/v8/css/fonts/SegoePro-Regular.ttf') format('truetype'),
-		 url('/funstuff/v8/css/fonts/SegoePro-Regular.svg#SegoePro') format('svg');
+	src: url('/win8/funstuff/v8/css/fonts/SegoePro-Regular.eot');
+	src: url('/win8/funstuff/v8/css/fonts/SegoePro-Regular.eot?#iefix') format('embedded-opentype'),
+		 url('/win8/funstuff/v8/css/fonts/SegoePro-Regular.woff') format('woff'),
+		 url('/win8/funstuff/v8/css/fonts/SegoePro-Regular.ttf') format('truetype'),
+		 url('/win8/funstuff/v8/css/fonts/SegoePro-Regular.svg#SegoePro') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }

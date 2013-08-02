@@ -33,7 +33,7 @@ Util.Objects["hwundwinb_mobile"] = new function() {
 		// animation frames
 		banner._images = new Array();
 		for(i = 0; i <= 113; i++) {
-			banner._images.push("/funstuff/v8/img/b_mobile/LiveTiles_Mobile_V002_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
+			banner._images.push("/win8/funstuff/v8/img/b_mobile/LiveTiles_Mobile_V002_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
 		}
 		banner._framerate = 1000/12; // 12 frames a second
 

@@ -16,12 +16,12 @@
 	font-family: Arial, sans-serif;
 }
 
-#hwundtiles .learnmore {position: absolute; z-index: 3200; cursor: pointer; width: 145px; height: 24px; background-color: transparent; background-repeat: no-repeat; background-position: top left; background-image: url(/img/bn_learnmore_red.png);
+#hwundtiles .learnmore {position: absolute; z-index: 3200; cursor: pointer; width: 145px; height: 24px; background-color: transparent; background-repeat: no-repeat; background-position: top left; background-image: url(/tiles_320x80/img/bn_learnmore_red.png);
 	-webkit-transform: translate3d(0,0,0);
 }
 #hwundtiles .learnmore a {display: block; text-indent: -9999px; height: 24px;}
 
-#hwundtiles .logo {background: transparent url(/img/logo.png) no-repeat top left; position: absolute; left: 20px; bottom: 22px; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;
+#hwundtiles .logo {background: transparent url(/tiles_320x80/img/logo.png) no-repeat top left; position: absolute; left: 20px; bottom: 22px; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;
 	-webkit-transform: translate3d(0,0,0);
 }
 
@@ -53,18 +53,18 @@
 #hwundtiles h2 {font-size: 24px; left: 20px; top: 13px; width: 278px;
 	overflow: hidden; text-indent: -9999px;
 	top: -3px; left: 0; width: 320px; height: 80px;
-	background: transparent url(/img/txt_senaste_nytt_a.png) no-repeat top left;
+	background: transparent url(/tiles_320x80/img/txt_senaste_nytt_a.png) no-repeat top left;
 }
 #hwundtiles h3 {font-size: 24px; left: 20px; top: 13px; width: 278px; display: none;
 
 	overflow: hidden; text-indent: -9999px;
 	top: -3px; left: 0; width: 320px; height: 80px;
-	background: transparent url(/img/txt_senaste_nytt_b.png) no-repeat top left;
+	background: transparent url(/tiles_320x80/img/txt_senaste_nytt_b.png) no-repeat top left;
 	
 }
 #hwundtiles p,
 #hwundtiles .tile {display: none;}
            
-#hwundtiles .logo {display: none; top: 18px; left: 54px; background-size: 100%; background-image: url(/img/logo_large.png); width: 210px; height: 40px;}
+#hwundtiles .logo {display: none; top: 18px; left: 54px; background-size: 100%; background-image: url(/tiles_320x80/img/logo_large.png); width: 210px; height: 40px;}
 #hwundtiles .learnmore {display: none;}
 #hwundtiles .preloader {display: none;}

@@ -13,12 +13,12 @@
 	font-family: "SegoeProRegular", Arial, sans-serif;
 }
 
-#hwundtiles980x300 .learnmore {position: absolute; z-index: 3200; cursor: pointer; width: 145px; height: 24px; background-color: transparent; background-repeat: no-repeat; background-position: top left; background-image: url(/funstuff/tiles_980x300/img/bn_learnmore_red.png);
+#hwundtiles980x300 .learnmore {position: absolute; z-index: 3200; cursor: pointer; width: 145px; height: 24px; background-color: transparent; background-repeat: no-repeat; background-position: top left; background-image: url(/feber_980/funstuff/tiles_980x300/img/bn_learnmore_red.png);
 	-webkit-transform: translate3d(0,0,0);
 }
 #hwundtiles980x300 .learnmore a {display: block; text-indent: -9999px; height: 24px;}
 
-#hwundtiles980x300 .logo {background: transparent url(/funstuff/tiles_980x300/img/logo.png) no-repeat top left; position: absolute; left: 20px; bottom: 22px; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;
+#hwundtiles980x300 .logo {background: transparent url(/feber_980/funstuff/tiles_980x300/img/logo.png) no-repeat top left; position: absolute; left: 20px; bottom: 22px; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;
 	-webkit-transform: translate3d(0,0,0);
 }
 
@@ -48,7 +48,7 @@
 #hwundtiles980x300.full ul.animation li {width: 978px; height: 298px;}
 #hwundtiles980x300.full h2 {font-size: 42px; left: 20px; top: 25px; width: 250px;}
 #hwundtiles980x300.full h3 {display: none;}
-#hwundtiles980x300.full p.hint1 {font-size: 14px; left: 725px; top: 80px; width: 180px; padding: 10px 0 10px 40px; background: transparent url(/funstuff/tiles_980x300/img/gx_tiles_hint_arrow.png) no-repeat left center; display: none;}
+#hwundtiles980x300.full p.hint1 {font-size: 14px; left: 725px; top: 80px; width: 180px; padding: 10px 0 10px 40px; background: transparent url(/feber_980/funstuff/tiles_980x300/img/gx_tiles_hint_arrow.png) no-repeat left center; display: none;}
 	
 #hwundtiles980x300.full .tile {position: absolute; z-index: 3100; cursor: pointer; display: none;}
 #hwundtiles980x300.full .tile.show {background-color: rgba(255, 255, 255, 1);}
@@ -67,9 +67,9 @@
 #hwundtiles980x300.full .easter_2 {top: 20px; left: 20px; width: 240px; height: 210px; z-index: 3051;}
 #hwundtiles980x300.full .touchscreen {top: 20px; left: 315px; width: 372px; height: 257px; z-index: 3051;}
 
-#hwundtiles980x300.full .mute {position: absolute; top: 20px; right: 20px; width: 30px; height: 30px; z-index: 3055; background: transparent url(/funstuff/tiles_980x300/img/bg_speaker.png) no-repeat 0 0;}
+#hwundtiles980x300.full .mute {position: absolute; top: 20px; right: 20px; width: 30px; height: 30px; z-index: 3055; background: transparent url(/feber_980/funstuff/tiles_980x300/img/bg_speaker.png) no-repeat 0 0;}
 #hwundtiles980x300.full .mute.muted {background-position: 0 -50px;}
-#hwundtiles980x300.full .preloader {font-size: 21px; top: 115px; left: 700px; width: 125px; height: 50px; padding: 0 65px 0 0; background-image: url(/funstuff/tiles_980x300/img/gx_loader_tiles.gif);}
+#hwundtiles980x300.full .preloader {font-size: 21px; top: 115px; left: 700px; width: 125px; height: 50px; padding: 0 65px 0 0; background-image: url(/feber_980/funstuff/tiles_980x300/img/gx_loader_tiles.gif);}
 #hwundtiles980x300.full.noloader .preloader {display: none;}
 
 
@@ -82,7 +82,7 @@
 #hwundtiles980x300.tablet ul.animation li {width: 766px; height: 233px;}
 #hwundtiles980x300.tablet h2 {font-size: 36px; left: 20px; top: 25px; width: 200px;}
 #hwundtiles980x300.tablet h3 {display: none;}
-#hwundtiles980x300.tablet p.hint1 {font-size: 13px; left: 560px; top: 80px; width: 160px; padding: 10px 0 10px 40px; background: transparent url(/funstuff/tiles_980x300/img/gx_tiles_hint_arrow.png) no-repeat left center; display: none;}
+#hwundtiles980x300.tablet p.hint1 {font-size: 13px; left: 560px; top: 80px; width: 160px; padding: 10px 0 10px 40px; background: transparent url(/feber_980/funstuff/tiles_980x300/img/gx_tiles_hint_arrow.png) no-repeat left center; display: none;}
 
 #hwundtiles980x300.tablet .tile {position: absolute; z-index: 3100; display: none;}
 #hwundtiles980x300.tablet .tile.show {background-color: rgba(255, 255, 255, 0.7);}
@@ -100,9 +100,9 @@
 #hwundtiles980x300.tablet .easter_2 {top: 20px; left: 20px; width: 200px; height: 180px; z-index: 3051;}
 #hwundtiles980x300.tablet .touchscreen {top: 16px; left: 245px; width: 293px; height: 202px; z-index: 3051;}
 
-#hwundtiles980x300.tablet .mute {position: absolute; top: 20px; right: 20px; width: 30px; height: 30px; z-index: 3055; background: transparent url(/funstuff/tiles_980x300/img/bg_speaker.png) no-repeat top left;}
+#hwundtiles980x300.tablet .mute {position: absolute; top: 20px; right: 20px; width: 30px; height: 30px; z-index: 3055; background: transparent url(/feber_980/funstuff/tiles_980x300/img/bg_speaker.png) no-repeat top left;}
 
-#hwundtiles980x300.tablet .preloader {font-size: 16px; top: 100px; left: 550px; width: 105px; height: 40px; padding: 0 65px 0 0; background-image: url(/funstuff/tiles_980x300/img/gx_loader_tiles.gif);}
+#hwundtiles980x300.tablet .preloader {font-size: 16px; top: 100px; left: 550px; width: 105px; height: 40px; padding: 0 65px 0 0; background-image: url(/feber_980/funstuff/tiles_980x300/img/gx_loader_tiles.gif);}
 #hwundtiles980x300.tablet.noloader .preloader {display: none;}
 
 
@@ -118,6 +118,6 @@
 #hwundtiles980x300.mobile p,
 #hwundtiles980x300.mobile .tile {display: none;}
 
-#hwundtiles980x300.mobile .logo {display: none; top: 27px; left: 54px; background-size: 100%; background-image: url(/funstuff/tiles_980x300/img/logo_large.png); width: 210px; height: 40px;}
+#hwundtiles980x300.mobile .logo {display: none; top: 27px; left: 54px; background-size: 100%; background-image: url(/feber_980/funstuff/tiles_980x300/img/logo_large.png); width: 210px; height: 40px;}
 #hwundtiles980x300.mobile .learnmore {display: none;}
 #hwundtiles980x300.mobile .preloader {display: none;}

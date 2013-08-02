@@ -11,7 +11,7 @@
 
 #hwundwina .learnmore a {display: block; text-indent: -9999px; height: 24px;}
 
-#hwundwina .logo {background: transparent url(/img/logo.png) no-repeat top left; position: absolute; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;}
+#hwundwina .logo {background: transparent url(/intro_320x80/img/logo.png) no-repeat top left; position: absolute; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;}
 
 
 #hwundwina .fullclick {position: absolute; left: 0px; top: 0px; z-index: 5000; width: 100%; height: 100%; cursor: pointer;}
@@ -25,7 +25,7 @@
 
 
 #hwundwina {background: #9b4f96;}
-#hwundwina .learnmore {background-image: url(/img/bn_learnmore_purple.png);}
+#hwundwina .learnmore {background-image: url(/intro_320x80/img/bn_learnmore_purple.png);}
 
 
 
@@ -33,7 +33,7 @@
 /* MOBILE */
 #hwundwina h2 {display: none;}
 #hwundwina h3 {display: none;}
-#hwundwina .logo {top: 18px; left: 54px; background-size: 100%; background-image: url(/img/logo_large.png); width: 210px; height: 40px;}
+#hwundwina .logo {top: 18px; left: 54px; background-size: 100%; background-image: url(/intro_320x80/img/logo_large.png); width: 210px; height: 40px;}
 #hwundwina .learnmore {display: none;}
 
 

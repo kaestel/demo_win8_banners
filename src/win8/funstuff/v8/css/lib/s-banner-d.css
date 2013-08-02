@@ -1,5 +1,5 @@
 #hwundwind {background: #00188f;}
-#hwundwind .learnmore {background-image: url(/funstuff/v8/img/bn_learnmore_blue.png); width: 184px;}
+#hwundwind .learnmore {background-image: url(/win8/funstuff/v8/img/bn_learnmore_blue.png); width: 184px;}
 #hwundwind .learnmore a {color: #00188f;}
 
 
@@ -8,7 +8,7 @@
 
 #hwundwind.full h2 {font-size: 62px; left: 40px; top: 40px; display: none;}
 #hwundwind.full h3 {display: none;}
-#hwundwind.full p.hint1 {font-size: 16px; left: 50px; top: 175px; width: 120px; text-align: right; display: none; padding: 10px 50px 10px 0; background: transparent url(/funstuff/v8/img/gx_password_hint_arrow.png) no-repeat 120px 50%;}
+#hwundwind.full p.hint1 {font-size: 16px; left: 50px; top: 175px; width: 120px; text-align: right; display: none; padding: 10px 50px 10px 0; background: transparent url(/win8/funstuff/v8/img/gx_password_hint_arrow.png) no-repeat 120px 50%;}
 
 #hwundwind.full .intro {position: absolute; left: 40px; top: 320px; z-index: 3005; font-size: 72px; color: #ffffff;
 	font-family: "SegoeProLight", Arial, sans-serif; font-weight: normal; line-height: 1em;
@@ -17,16 +17,16 @@
 #hwundwind.full ul.views {position: absolute; left: 210px; top: 175px; z-index: 3005; font-size: 0; width: 648px; height: 120px; display: none; padding: 0; margin: 0;}
 #hwundwind.full ul.views li {display: inline-block; vertical-align: top; width: 196px; height: 120px; margin: 0 10px; position: relative;}
 #hwundwind.full ul.views li.view {background-color: transparent; background-repeat: no-repeat; background-position: center center; opacity: 0.5; background-size: 95%;}
-#hwundwind.full ul.views li.view1 {background-image: url(/funstuff/v8/img/pi_password_view1.jpg);}
-#hwundwind.full ul.views li.view2 {background-image: url(/funstuff/v8/img/pi_password_view2.jpg);}
-#hwundwind.full ul.views li.view3 {background-image: url(/funstuff/v8/img/pi_password_view3.jpg);}
+#hwundwind.full ul.views li.view1 {background-image: url(/win8/funstuff/v8/img/pi_password_view1.jpg);}
+#hwundwind.full ul.views li.view2 {background-image: url(/win8/funstuff/v8/img/pi_password_view2.jpg);}
+#hwundwind.full ul.views li.view3 {background-image: url(/win8/funstuff/v8/img/pi_password_view3.jpg);}
 #hwundwind.full ul.views li.view.selected {background-size: 100%; opacity: 1;}
 
 /*
 #hwundwind.full .logo {display: none;}
 #hwundwind.full .learnmore {display: none;}
 */
-#hwundwind.full .preloader {font-size: 21px; top: 335px; left: 700px; width: 125px; height: 50px; padding: 0 65px 0 0; background-image: url(/funstuff/v8/img/gx_loader_password.gif);}
+#hwundwind.full .preloader {font-size: 21px; top: 335px; left: 700px; width: 125px; height: 50px; padding: 0 65px 0 0; background-image: url(/win8/funstuff/v8/img/gx_loader_password.gif);}
 
 
 /* TABLET */
@@ -34,7 +34,7 @@
 
 #hwundwind.tablet h2 {font-size: 46px; left: 40px; top: 40px; display: none;}
 #hwundwind.tablet h3 {display: none;}
-#hwundwind.tablet p.hint1 {font-size: 14px; left: 35px; top: 125px; width: 100px; text-align: right; display: none; padding: 10px 40px 10px 20px; background: transparent url(/funstuff/v8/img/gx_password_hint_arrow.png) no-repeat 110px 50%;}
+#hwundwind.tablet p.hint1 {font-size: 14px; left: 35px; top: 125px; width: 100px; text-align: right; display: none; padding: 10px 40px 10px 20px; background: transparent url(/win8/funstuff/v8/img/gx_password_hint_arrow.png) no-repeat 110px 50%;}
 
 #hwundwind.tablet .intro {position: absolute; left: 40px; top: 320px; z-index: 3005; font-size: 72px; color: #ffffff;
 	font-family: "SegoeProLight", Arial, sans-serif; font-weight: normal; line-height: 1em;
@@ -44,16 +44,16 @@
 #hwundwind.tablet ul.views li {display: inline-block; vertical-align: top; width: 156px; height: 90px; margin: 0 10px;}
 
 #hwundwind.tablet ul.views li.view {background-color: transparent; background-repeat: no-repeat; background-position: center center; opacity: 0.5; background-size: 95%;}
-#hwundwind.tablet ul.views li.view1 {background-image: url(/funstuff/v8/img/pi_password_view1.jpg);}
-#hwundwind.tablet ul.views li.view2 {background-image: url(/funstuff/v8/img/pi_password_view2.jpg);}
-#hwundwind.tablet ul.views li.view3 {background-image: url(/funstuff/v8/img/pi_password_view3.jpg);}
+#hwundwind.tablet ul.views li.view1 {background-image: url(/win8/funstuff/v8/img/pi_password_view1.jpg);}
+#hwundwind.tablet ul.views li.view2 {background-image: url(/win8/funstuff/v8/img/pi_password_view2.jpg);}
+#hwundwind.tablet ul.views li.view3 {background-image: url(/win8/funstuff/v8/img/pi_password_view3.jpg);}
 #hwundwind.tablet ul.views li.view.selected {background-size: 100%; opacity: 1;}
 
 /*
 #hwundwind.tablet .logo {display: none;}
 #hwundwind.tablet .learnmore {display: none;}
 */
-#hwundwind.tablet .preloader {font-size: 16px; top: 340px; left: 550px; width: 105px; height: 40px; padding: 0 65px 0 0; background-image: url(/funstuff/v8/img/gx_loader_password.gif);}
+#hwundwind.tablet .preloader {font-size: 16px; top: 340px; left: 550px; width: 105px; height: 40px; padding: 0 65px 0 0; background-image: url(/win8/funstuff/v8/img/gx_loader_password.gif);}
 
 
 /* MOBILE */
@@ -65,7 +65,7 @@
 
 #hwundwind.mobile ul.views {display: none;}
 
-#hwundwind.mobile .logo {background-size: 100%; background-image: url(/funstuff/v8/img/logo_large.png); bottom: 20px; left: 20px; top: auto; width: 101px; height: 20px;}
+#hwundwind.mobile .logo {background-size: 100%; background-image: url(/win8/funstuff/v8/img/logo_large.png); bottom: 20px; left: 20px; top: auto; width: 101px; height: 20px;}
 #hwundwind.mobile .logo.exit {top: 130px; left: 50px; bottom: auto; width: 210px; height: 40px;}
 #hwundwind.mobile .learnmore {position: absolute; top: auto; right: auto; width: 184px; left: 50%; margin-left: -92px; bottom: 35px; text-align: center; display: none;}
 #hwundwind.mobile .preloader {display: none;}

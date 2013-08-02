@@ -13,7 +13,7 @@ Util.Objects["hwundintro980x300"] = new function() {
 		// animation frames
 		banner._images = new Array();
 		for(i = 0; i <= 84; i++) {
-			banner._images.push("/funstuff/intro_980x300/img/sequence/IntroBanner_V003_" + ((i > 9 ? i > 99 ? i > 999 ? "0" : "00" : "000" : "0000") + i) + ".jpg");
+			banner._images.push("/feber_980/funstuff/intro_980x300/img/sequence/IntroBanner_V003_" + ((i > 9 ? i > 99 ? i > 999 ? "0" : "00" : "000" : "0000") + i) + ".jpg");
 		}
 		banner._framerate = 1000/12; // 12 frames a second
 

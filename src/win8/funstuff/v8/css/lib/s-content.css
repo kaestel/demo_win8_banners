@@ -46,7 +46,7 @@
 #hwundwina .logo,
 #hwundwinb .logo,
 #hwundwinc .logo,
-#hwundwind .logo {background: transparent url(/funstuff/v8/img/logo.png) no-repeat top left; position: absolute; left: 20px; bottom: 22px; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;
+#hwundwind .logo {background: transparent url(/win8/funstuff/v8/img/logo.png) no-repeat top left; position: absolute; left: 20px; bottom: 22px; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;
 	-webkit-transform: translate3d(0,0,0);
 }
 

@@ -29,7 +29,7 @@ Util.Objects["hwundwinc"] = new function() {
 		// animation frames
 		banner._images = new Array();
 		for(i = 0; i <= 194; i++) {
-			banner._images.push("/funstuff/v8/img/c/PCSelector_16FPS_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
+			banner._images.push("/win8/funstuff/v8/img/c/PCSelector_16FPS_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
 		}
 		banner._framerate = 1000/16; // 12 frames a second
 

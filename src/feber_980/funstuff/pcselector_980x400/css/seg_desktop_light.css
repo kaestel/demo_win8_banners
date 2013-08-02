@@ -10,16 +10,16 @@
 	font-family: "SegoeProLight", Arial, sans-serif;
 }
 #hwundpcsel980x400 .learnmore {position: absolute; z-index: 3200; cursor: pointer; width: 236px; height: 24px; background-color: transparent; background-repeat: no-repeat; background-position: top left;}
-#hwundpcsel980x400 .learnmore.web {background-image: url(/funstuff/pcselector_980x400/img/bn_learnmore_red_web.png);}
-#hwundpcsel980x400 .learnmore.irl {background-image: url(/funstuff/pcselector_980x400/img/bn_learnmore_red_irl.png); z-index: 5001;}
+#hwundpcsel980x400 .learnmore.web {background-image: url(/feber_980/funstuff/pcselector_980x400/img/bn_learnmore_red_web.png);}
+#hwundpcsel980x400 .learnmore.irl {background-image: url(/feber_980/funstuff/pcselector_980x400/img/bn_learnmore_red_irl.png); z-index: 5001;}
 #hwundpcsel980x400 .learnmore a {display: block; text-indent: -9999px; height: 24px; overflow: hidden;}
-#hwundpcsel980x400 .logo {background: transparent url(/funstuff/pcselector_980x400/img/logo.png) no-repeat top left; position: absolute; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;}
+#hwundpcsel980x400 .logo {background: transparent url(/feber_980/funstuff/pcselector_980x400/img/logo.png) no-repeat top left; position: absolute; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;}
 #hwundpcsel980x400 .fullclick {position: absolute; left: 0px; top: 0px; z-index: 5000; width: 100%; height: 100%; cursor: pointer;}
 #hwundpcsel980x400.full {width: 978px; height: 398px;}
 #hwundpcsel980x400.full .learnmore {right: 30px; bottom: 16px;}
 #hwundpcsel980x400.full .learnmore.web {bottom: 57px;}
 #hwundpcsel980x400.full .logo {left: 30px; bottom: 18px;}
-#hwundpcsel980x400.full {background: #e81123 url(/funstuff/pcselector_980x400/img/sequence/PcSelector_980x400_00114.jpg) no-repeat 0px top;}
+#hwundpcsel980x400.full {background: #e81123 url(/feber_980/funstuff/pcselector_980x400/img/sequence/PcSelector_980x400_00114.jpg) no-repeat 0px top;}
 #hwundpcsel980x400.full h2 {font-size: 46px; left: 30px; top: 45px;}
 #hwundpcsel980x400.full h4 {display: none;}
 #hwundpcsel980x400.full p {display: none;}
@@ -28,7 +28,7 @@
 #hwundpcsel980x400.tablet .learnmore {right: 30px; bottom: 16px;}
 #hwundpcsel980x400.tablet .learnmore.web {bottom: 57px;}
 #hwundpcsel980x400.tablet .logo {left: 30px; bottom: 18px;}
-#hwundpcsel980x400.tablet {background: #e81123 url(/funstuff/pcselector_980x400/img/sequence/PcSelector_980x400_00114.jpg) no-repeat center center;}
+#hwundpcsel980x400.tablet {background: #e81123 url(/feber_980/funstuff/pcselector_980x400/img/sequence/PcSelector_980x400_00114.jpg) no-repeat center center;}
 #hwundpcsel980x400.tablet h2 {font-size: 40px; left: 30px; top: 30px;}
 #hwundpcsel980x400.tablet h4 {display: none;}
 #hwundpcsel980x400.tablet p {display: none;}
@@ -41,17 +41,17 @@
 #hwundpcsel980x400.mobile h3 {display: none;}
 #hwundpcsel980x400.mobile p {display: none;}
 #hwundpcsel980x400.mobile .comp {display: none;}
-#hwundpcsel980x400.mobile .logo {background-size: 100%; background-image: url(/funstuff/pcselector_980x400/img/logo.png); bottom: 20px; left: 20px; top: auto; width: 101px; height: 20px;}
+#hwundpcsel980x400.mobile .logo {background-size: 100%; background-image: url(/feber_980/funstuff/pcselector_980x400/img/logo.png); bottom: 20px; left: 20px; top: auto; width: 101px; height: 20px;}
 
 
 /*s-fonts-desktop_light.css*/
 @font-face {
 	font-family: 'SegoeProLight';
-	src: url('/funstuff/pcselector_980x400/css/fonts/SegoePro-Light.eot');
-	src: url('/funstuff/pcselector_980x400/css/fonts/SegoePro-Light.eot?#iefix') format('embedded-opentype'),
-		 url('/funstuff/pcselector_980x400/css/fonts/SegoePro-Light.woff') format('woff'),
-		 url('/funstuff/pcselector_980x400/css/fonts/SegoePro-Light.ttf') format('truetype'),
-		 url('/funstuff/pcselector_980x400/css/fonts/SegoePro-Light.svg#SegoePro-Light') format('svg');
+	src: url('/feber_980/funstuff/pcselector_980x400/css/fonts/SegoePro-Light.eot');
+	src: url('/feber_980/funstuff/pcselector_980x400/css/fonts/SegoePro-Light.eot?#iefix') format('embedded-opentype'),
+		 url('/feber_980/funstuff/pcselector_980x400/css/fonts/SegoePro-Light.woff') format('woff'),
+		 url('/feber_980/funstuff/pcselector_980x400/css/fonts/SegoePro-Light.ttf') format('truetype'),
+		 url('/feber_980/funstuff/pcselector_980x400/css/fonts/SegoePro-Light.svg#SegoePro-Light') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }

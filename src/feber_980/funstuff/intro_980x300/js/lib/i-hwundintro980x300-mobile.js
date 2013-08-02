@@ -15,7 +15,7 @@ Util.Objects["hwundintro980x300_mobile"] = new function() {
 		// animation frames
 		banner._images = new Array();
 		for(i = 0; i <= 79; i++) {
-			banner._images.push("/funstuff/intro_980x300/img/sequence_mobile/IntroBanner_Mobile_V001_" + ((i > 9 ? i > 99 ? i > 999 ? "0" : "00" : "000" : "0000") + i) + ".jpg");
+			banner._images.push("/feber_980/funstuff/intro_980x300/img/sequence_mobile/IntroBanner_Mobile_V001_" + ((i > 9 ? i > 99 ? i > 999 ? "0" : "00" : "000" : "0000") + i) + ".jpg");
 		}
 		banner._framerate = 1000/12; // 12 frames a second
 

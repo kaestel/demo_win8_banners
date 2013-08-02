@@ -14,7 +14,7 @@ Util.Objects["hwundpcsel980x400"] = new function() {
 		// animation frames
 		banner._images = new Array();
 		for(i = 0; i <= 205; i++) {
-			banner._images.push("/funstuff/pcselector_980x400/img/sequence/PcSelector_980x400_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
+			banner._images.push("/feber_980/funstuff/pcselector_980x400/img/sequence/PcSelector_980x400_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
 		}
 		banner._framerate = 1000/16; // 12 frames a second
 

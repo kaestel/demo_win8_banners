@@ -15,7 +15,7 @@ Util.Objects["hwundwina"] = new function() {
 		// animation frames
 		banner._images = new Array();
 		for(i = 0; i <= 79; i++) {
-			banner._images.push("/img/sequence/IntroBanner_Mobile_V001_" + ((i > 9 ? i > 99 ? i > 999 ? "0" : "00" : "000" : "0000") + i) + ".jpg");
+			banner._images.push("/intro_320x80/img/sequence/IntroBanner_Mobile_V001_" + ((i > 9 ? i > 99 ? i > 999 ? "0" : "00" : "000" : "0000") + i) + ".jpg");
 		}
 		banner._framerate = 1000/12; // 12 frames a second
 

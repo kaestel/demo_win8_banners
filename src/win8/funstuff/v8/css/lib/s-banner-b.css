@@ -1,5 +1,5 @@
 #hwundwinb {background: #e81123;}
-#hwundwinb .learnmore {background-image: url(/funstuff/v8/img/bn_learnmore_red.png);}
+#hwundwinb .learnmore {background-image: url(/win8/funstuff/v8/img/bn_learnmore_red.png);}
 #hwundwinb .learnmore a {color: #e81123;}
 
 
@@ -7,7 +7,7 @@
 #hwundwinb.full ul.animation li {width: 978px; height: 298px;}
 #hwundwinb.full h2 {font-size: 42px; left: 20px; top: 25px; width: 250px;}
 #hwundwinb.full h3 {display: none;}
-#hwundwinb.full p.hint1 {font-size: 14px; left: 725px; top: 80px; width: 180px; padding: 10px 0 10px 40px; background: transparent url(/funstuff/v8/img/gx_tiles_hint_arrow.png) no-repeat left center; display: none;}
+#hwundwinb.full p.hint1 {font-size: 14px; left: 725px; top: 80px; width: 180px; padding: 10px 0 10px 40px; background: transparent url(/win8/funstuff/v8/img/gx_tiles_hint_arrow.png) no-repeat left center; display: none;}
 	
 #hwundwinb.full .tile {position: absolute; z-index: 3100; cursor: pointer; display: none;}
 #hwundwinb.full .tile.show {background-color: rgba(255, 255, 255, 1);}
@@ -26,9 +26,9 @@
 #hwundwinb.full .easter_2 {top: 20px; left: 20px; width: 240px; height: 210px; z-index: 3051;}
 #hwundwinb.full .touchscreen {top: 20px; left: 315px; width: 372px; height: 257px; z-index: 3051;}
 
-#hwundwinb.full .mute {position: absolute; top: 20px; right: 20px; width: 30px; height: 30px; z-index: 3055; background: transparent url(/funstuff/v8/img/bg_speaker.png) no-repeat 0 0;}
+#hwundwinb.full .mute {position: absolute; top: 20px; right: 20px; width: 30px; height: 30px; z-index: 3055; background: transparent url(/win8/funstuff/v8/img/bg_speaker.png) no-repeat 0 0;}
 #hwundwinb.full .mute.muted {background-position: 0 -50px;}
-#hwundwinb.full .preloader {font-size: 21px; top: 115px; left: 700px; width: 125px; height: 50px; padding: 0 65px 0 0; background-image: url(/funstuff/v8/img/gx_loader_tiles.gif);}
+#hwundwinb.full .preloader {font-size: 21px; top: 115px; left: 700px; width: 125px; height: 50px; padding: 0 65px 0 0; background-image: url(/win8/funstuff/v8/img/gx_loader_tiles.gif);}
 #hwundwinb.full.noloader .preloader {display: none;}
 
 
@@ -36,7 +36,7 @@
 #hwundwinb.tablet ul.animation li {width: 766px; height: 233px;}
 #hwundwinb.tablet h2 {font-size: 36px; left: 20px; top: 25px; width: 200px;}
 #hwundwinb.tablet h3 {display: none;}
-#hwundwinb.tablet p.hint1 {font-size: 13px; left: 560px; top: 80px; width: 160px; padding: 10px 0 10px 40px; background: transparent url(/funstuff/v8/img/gx_tiles_hint_arrow.png) no-repeat left center; display: none;}
+#hwundwinb.tablet p.hint1 {font-size: 13px; left: 560px; top: 80px; width: 160px; padding: 10px 0 10px 40px; background: transparent url(/win8/funstuff/v8/img/gx_tiles_hint_arrow.png) no-repeat left center; display: none;}
 
 #hwundwinb.tablet .tile {position: absolute; z-index: 3100; display: none;}
 #hwundwinb.tablet .tile.show {background-color: rgba(255, 255, 255, 0.7);}
@@ -54,9 +54,9 @@
 #hwundwinb.tablet .easter_2 {top: 20px; left: 20px; width: 200px; height: 180px; z-index: 3051;}
 #hwundwinb.tablet .touchscreen {top: 16px; left: 245px; width: 293px; height: 202px; z-index: 3051;}
 
-#hwundwinb.tablet .mute {position: absolute; top: 20px; right: 20px; width: 30px; height: 30px; z-index: 3055; background: transparent url(/funstuff/v8/img/bg_speaker.png) no-repeat top left;}
+#hwundwinb.tablet .mute {position: absolute; top: 20px; right: 20px; width: 30px; height: 30px; z-index: 3055; background: transparent url(/win8/funstuff/v8/img/bg_speaker.png) no-repeat top left;}
 
-#hwundwinb.tablet .preloader {font-size: 16px; top: 100px; left: 550px; width: 105px; height: 40px; padding: 0 65px 0 0; background-image: url(/funstuff/v8/img/gx_loader_tiles.gif);}
+#hwundwinb.tablet .preloader {font-size: 16px; top: 100px; left: 550px; width: 105px; height: 40px; padding: 0 65px 0 0; background-image: url(/win8/funstuff/v8/img/gx_loader_tiles.gif);}
 #hwundwinb.tablet.noloader .preloader {display: none;}
 
 
@@ -67,6 +67,6 @@
 #hwundwinb.mobile p,
 #hwundwinb.mobile .tile {display: none;}
 
-#hwundwinb.mobile .logo {display: none; top: 27px; left: 54px; background-size: 100%; background-image: url(/funstuff/v8/img/logo_large.png); width: 210px; height: 40px;}
+#hwundwinb.mobile .logo {display: none; top: 27px; left: 54px; background-size: 100%; background-image: url(/win8/funstuff/v8/img/logo_large.png); width: 210px; height: 40px;}
 #hwundwinb.mobile .learnmore {display: none;}
 #hwundwinb.mobile .preloader {display: none;}

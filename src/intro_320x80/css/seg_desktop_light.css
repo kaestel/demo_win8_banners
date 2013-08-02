@@ -8,26 +8,26 @@
 #hwundwina h4 {font-family: "SegoeProLight", Arial, sans-serif; font-weight: normal; line-height: 1em; position: absolute; z-index: 3000; color: #ffffff; padding: 0; margin: 0;}
 #hwundwina .learnmore {position: absolute; z-index: 3200; cursor: pointer; width: 145px; height: 24px; background-color: transparent; background-repeat: no-repeat; background-position: top left;}
 #hwundwina .learnmore a {display: block; text-indent: -9999px; height: 24px;}
-#hwundwina .logo {background: transparent url(/img/logo.png) no-repeat top left; position: absolute; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;}
+#hwundwina .logo {background: transparent url(/intro_320x80/img/logo.png) no-repeat top left; position: absolute; z-index: 3200; width: 101px; height: 20px; text-indent: -9999px; overflow: hidden;}
 #hwundwina .fullclick {position: absolute; left: 0px; top: 0px; z-index: 5000; width: 100%; height: 100%; cursor: pointer;}
 #hwundwina {width: 318px; height: 78px;}
 #hwundwina .learnmore {right: 25px; top: 30px;}
 #hwundwina {background: #9b4f96;}
-#hwundwina .learnmore {background-image: url(/img/bn_learnmore_purple.png);}
+#hwundwina .learnmore {background-image: url(/intro_320x80/img/bn_learnmore_purple.png);}
 #hwundwina h2 {display: none;}
 #hwundwina h3 {display: none;}
-#hwundwina .logo {top: 18px; left: 54px; background-size: 100%; background-image: url(/img/logo_large.png); width: 210px; height: 40px;}
+#hwundwina .logo {top: 18px; left: 54px; background-size: 100%; background-image: url(/intro_320x80/img/logo_large.png); width: 210px; height: 40px;}
 #hwundwina .learnmore {display: none;}
 
 
 /*s-fonts-desktop_light.css*/
 @font-face {
 	font-family: 'SegoeProLight';
-	src: url('/css/fonts/SegoePro-Light.eot');
-	src: url('/css/fonts/SegoePro-Light.eot?#iefix') format('embedded-opentype'),
-		 url('/css/fonts/SegoePro-Light.woff') format('woff'),
-		 url('/css/fonts/SegoePro-Light.ttf') format('truetype'),
-		 url('/css/fonts/SegoePro-Light.svg#SegoePro-Light') format('svg');
+	src: url('/intro_320x80/css/fonts/SegoePro-Light.eot');
+	src: url('/intro_320x80/css/fonts/SegoePro-Light.eot?#iefix') format('embedded-opentype'),
+		 url('/intro_320x80/css/fonts/SegoePro-Light.woff') format('woff'),
+		 url('/intro_320x80/css/fonts/SegoePro-Light.ttf') format('truetype'),
+		 url('/intro_320x80/css/fonts/SegoePro-Light.svg#SegoePro-Light') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }

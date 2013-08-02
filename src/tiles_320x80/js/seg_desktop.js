@@ -1,7 +1,8 @@
 
+/*seg_desktop.js*/
 if(!u || !Util) {
 	var u, Util = u = new function() {}
-	u.version = 6;
+	u.version = 0.6;
 	u.bug = function() {}
 	u.stats = new function() {this.pageView = function(){};this.event = function(){};this.customVar = function(){}}
 }
@@ -601,8 +602,8 @@ Util.Events = u.e = new function() {
 	this._inputStart = function(event) {
 		this.event_var = event;
 		this.input_timestamp = event.timeStamp;
-		this.start_event_x = u.eventX(event);
-		this.start_event_y = u.eventY(event);
+		this.start_event_x = u.eventX(event) - u.scrollX();
+		this.start_event_y = u.eventY(event) - u.scrollY();
 		this.current_xps = 0;
 		this.current_yps = 0;
 		this.swiped = false;
@@ -799,8 +800,8 @@ u.e.drag = function(node, boundaries, settings) {
 }
 u.e._pick = function(event) {
 	u.e.resetNestedEvents(this);
-	var init_speed_x = Math.abs(this.start_event_x - u.eventX(event));
-	var init_speed_y = Math.abs(this.start_event_y - u.eventY(event));
+	var init_speed_x = Math.abs(this.start_event_x - u.eventX(event) - u.scrollX());
+	var init_speed_y = Math.abs(this.start_event_y - u.eventY(event) - u.scrollY());
 	if(init_speed_x > init_speed_y && this.only_horisontal || 
 	   init_speed_x < init_speed_y && this.only_vertical ||
 	   !this.only_vertical && !this.only_horisontal) {
@@ -808,8 +809,8 @@ u.e._pick = function(event) {
 		this.move_timestamp = event.timeStamp;
 		this.move_last_x = this._x;
 		this.move_last_y = this._y;
-		this.start_input_x = u.eventX(event) - this._x; 
-		this.start_input_y = u.eventY(event) - this._y;
+		this.start_input_x = u.eventX(event) - this._x - u.scrollX(); 
+		this.start_input_y = u.eventY(event) - this._y - u.scrollY();
 		this.current_xps = 0;
 		this.current_yps = 0;
 		u.a.transition(this, "none");
@@ -824,8 +825,8 @@ u.e._pick = function(event) {
 	}
 }
 u.e._drag = function(event) {
-	this.current_x = u.eventX(event) - this.start_input_x;
-	this.current_y = u.eventY(event) - this.start_input_y;
+	this.current_x = u.eventX(event) - this.start_input_x - u.scrollX();
+	this.current_y = u.eventY(event) - this.start_input_y - u.scrollY();
 	this.current_xps = Math.round(((this.current_x - this.move_last_x) / (event.timeStamp - this.move_timestamp)) * 1000);
 	this.current_yps = Math.round(((this.current_y - this.move_last_y) / (event.timeStamp - this.move_timestamp)) * 1000);
 	this.move_timestamp = event.timeStamp;
@@ -1357,6 +1358,13 @@ Util.Form = u.f = new function() {
 					this.validate(field.iN);
 					u.e.addEvent(field.iN, "keyup", this._update);
 					u.e.addEvent(field.iN, "change", this._changed);
+				}
+			}
+			if(typeof(this.customInit) == "object") {
+				for(type in this.customInit) {
+					if(field.className.match(type)) {
+						this.customInit[type](field);
+					}
 				}
 			}
 		}
@@ -2320,6 +2328,7 @@ Util.setHashPath = function(path) {
 	return Util.getHashPath();
 }
 
+/*u-init-domready.js*/
 if(!u.o) {
 	Util.Objects = u.o = new Object();
 }
@@ -2358,6 +2367,7 @@ else {
 	u.e.addEvent(window, "load", u.init);
 }
 
+/*i-banner.js*/
 Util.Objects["banner"] = new function() {
 	this.init = function(banner) {
 		banner.animation = u.ae(banner, "ul", {"class":"animation"});
@@ -2591,6 +2601,7 @@ Util.Objects["banner"] = new function() {
 		}
 	}
 }
+/*i-hwundtiles-mobile.js*/
 Util.Objects["hwundtiles"] = new function() {
 	this.init = function(banner) {
 		banner._initialized = true;
@@ -2601,7 +2612,7 @@ Util.Objects["hwundtiles"] = new function() {
 		banner._initcontent = banner.innerHTML;
 		banner._images = new Array();
 		for(i = 0; i <= 113; i++) {
-			banner._images.push("/img/sequence_mobile/LiveTiles_Mobile_V002_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
+			banner._images.push("/tiles_320x80/img/sequence_mobile/LiveTiles_Mobile_V002_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
 		}
 		banner._framerate = 1000/12; // 12 frames a second
 		banner.cleared = function() {
@@ -2709,6 +2720,7 @@ Util.Objects["hwundtiles"] = new function() {
 		banner.ready(true);
 	}
 }
+/*i-banners.js*/
 Util.Objects["hwundcontroller"] = new function() {
 	this.init = function(banner) {
 		u.bug_position = "fixed";

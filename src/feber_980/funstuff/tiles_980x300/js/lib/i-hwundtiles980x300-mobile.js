@@ -13,7 +13,7 @@ Util.Objects["hwundtiles980x300_mobile"] = new function() {
 		// animation frames
 		banner._images = new Array();
 		for(i = 0; i <= 113; i++) {
-			banner._images.push("/funstuff/tiles_980x300/img/sequence_mobile/LiveTiles_Mobile_V002_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
+			banner._images.push("/feber_980/funstuff/tiles_980x300/img/sequence_mobile/LiveTiles_Mobile_V002_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
 		}
 		banner._framerate = 1000/12; // 12 frames a second
 
