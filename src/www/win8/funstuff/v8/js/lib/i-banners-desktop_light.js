@@ -29,7 +29,7 @@ Util.Objects["banners"] = new function() {
 		var prerollclick = u.ae(a, "div", {"class":"prerollclick"});
 		u.e.click(prerollclick);
 		prerollclick.clicked = function() {
-			window.open("http://script.tailsweep.com/csClick/17331107/http://www.youtube.com/watch?v=qOpt8kOvhmY", "_blank");
+			window.open("http://www.youtube.com/watch?v=qOpt8kOvhmY", "_blank");
 		}
 
 		var b = u.qs("#hwundwinb");

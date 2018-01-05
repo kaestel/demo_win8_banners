@@ -1,5 +1,5 @@
 
-/*seg_desktop_ie.js*/
+/*seg_desktop.js*/
 if(!u || !Util) {
 	var u, Util = u = new function() {}
 	u.version = 0.6;
@@ -2327,211 +2327,6 @@ Util.setHashPath = function(path) {
 	location.hash = path;
 	return Util.getHashPath();
 }
-this.transition = function(e, transition) {
-	var duration = transition.match(/[0-9.]+[ms]+/g);
-	if(duration) {
-		var d = duration[0];
-		e.duration = d.match("ms") ? parseFloat(d) : (parseFloat(d) * 1000);
-	}
-	else {
-		e.duration = false;
-	}
-}
-u.a.setOpacity = function(e, opacity) {
-	if(e.duration && !this.support()) {
-		e.o_start = e._opacity ? e._opacity : u.gcs(e, "opacity");
-		e.o_transitions = e.duration/50;
-		e.o_change = (opacity - e.o_start) / e.o_transitions;
-		e.o_progress = 0;
-		e.o_transitionTo = function() {
-			++this.o_progress;
-			var new_opacity = (Number(this.o_start) + Number(this.o_progress * this.o_change));
-			u.as(this, "opacity", new_opacity);
-		}
-		for(var i = 0; i < e.o_transitions; i++) {
-			u.t.setTimer(e, e.o_transitionTo, 50 * i);
-		}
-		if(typeof(e.transitioned) == "function") {
-			u.t.setTimer(e, e.transitioned, e.duration);
-		}
-	}
-	else {
-		e.style.opacity = opacity;
-	}
-	e._opacity = opacity;
-	e.transition_timestamp = new Date().getTime();
-	e.offsetHeight;
-}
-u.a.setWidth = function(e, width) {
-	if(e.duration && !this.support()) {
-		e.w_start = e._width ? e._width : u.gcs(e, "width").replace("px", "");
-		e.w_transitions = e.duration/50;
-		e.w_change = (width - e.w_start) / e.w_transitions;
-		e.w_progress = 0;
-		e.w_transitionTo = function() {
-			++this.w_progress;
-			var new_width = (Number(this.w_start) + Number(this.w_progress * this.w_change));
-			u.as(this, "width", new_width+"px");
-		}
-		for(var i = 0; i < e.w_transitions; i++) {
-			u.t.setTimer(e, e.w_transitionTo, 50 * i);
-		}
-		if(typeof(e.transitioned) == "function") {
-			u.t.setTimer(e, e.transitioned, e.duration);
-		}
-	}
-	else {
-		var width_px = (width == "auto" ? width : width+"px");
-		u.as(e, "width", width_px);
-	}
-	e._width = width;
-	e.transition_timestamp = new Date().getTime();
-	e.offsetHeight;
-}
-u.a.setHeight = function(e, height) {
-	if(e.duration && !this.support()) {
-		e.h_start = e._height ? e._height : u.gcs(e, "height").replace("px", "");
-		e.h_transitions = e.duration/50;
-		e.h_change = (height - e.h_start) / e.h_transitions;
-		e.h_progress = 0;
-		e.h_transitionTo = function() {
-			++this.h_progress;
-			var new_height = (Number(this.h_start) + Number(this.h_progress * this.h_change));
-			u.as(this, "height", new_height+"px");
-		}
-		for(var i = 0; i < e.h_transitions; i++) {
-			u.t.setTimer(e, e.h_transitionTo, 50 * i);
-		}
-		if(typeof(e.transitioned) == "function") {
-			u.t.setTimer(e, e.transitioned, e.duration);
-		}
-	}
-	else {
-		var height_px = (height == "auto" ? height : height+"px");
-		u.as(e, "height", height_px);
-	}
-	e._height = height;
-	e.transition_timestamp = new Date().getTime();
-	e.offsetHeight;
-}
-u.a.setBgPos = function(node, x, y) {
-	if(node.duration && !this.support()) {
-		node._bg_same_x = false;
-		node._bg_same_y = false;
-		node.bg_transitions = node.duration/50;
-		if(u.gcs(node, "background-position-x") != x) {
-			node.bg_start_x = node._bg_x ? node._bg_x : u.gcs(node, "background-position-x").replace("px", "");
-			node.bg_change_x = (x - node.bg_start_x) / node.bg_transitions;
-		}
-		else {
-			node._bg_same_x = true;
-		}
-		if(u.gcs(node, "background-position-y") != y) {
-			node.bg_start_y = node._bg_y ? node._bg_y : u.gcs(node, "background-position-y").replace("px", "");
-			node.bg_change_y = (y - node.bg_start_y) / node.bg_transitions;
-		}
-		else {
-			node._bg_same_y = true;
-		}
-		node.bg_progress = 0;
-		node.bg_transitionTo = function() {
-			++this.bg_progress;
-			var new_x, new_y;
-			if(!this._bg_same_x) {
-				new_x = Math.round((Number(this.bg_start_x) + Number(this.bg_progress * this.bg_change_x)));
-			}
-			else {
-				new_x = this._bg_x;
-			}
-			if(!this._bg_same_y) {
-				new_y = Math.round((Number(this.bg_start_y) + Number(this.bg_progress * this.bg_change_y)));
-			}
-			else {
-				new_y = this._bg_y;
-			}
-			u.as(this, "backgroundPosition", (new_x.toString().match(/\%|top|left|right|center|bottom/) ? new_x : new_x + "px") + " " + (new_y.toString().match(/\%|top|left|right|center|bottom/) ? new_y : new_y + "px"));
-			this.offsetHeight;
-		}
-		if(!node._bg_same_x || !node._bg_same_x) {
-			for(var i = 0; i < node.bg_transitions; i++) {
-				u.t.setTimer(node, node.bg_transitionTo, 50 * i);
-			}
-			if(typeof(node.transitioned) == "function") {
-				u.t.setTimer(node, node.transitioned, node.duration);
-			}
-		}
-	}
-	else {
-		u.as(node, "backgroundPosition", (x.toString().match(/\%|top|left|right|center|bottom/) ? x : x + "px") + " " + (y.toString().match(/\%|top|left|right|center|bottom/) ? y : y + "px"));
-	}
-	node._bg_x = x;
-	node._bg_y = y;
-	node.transition_timestamp = new Date().getTime();
-	node.offsetHeight;
-}
-u.a.translate = function(e, x, y) {
-	var i;
-	if(e.translate_offset_x == undefined) {
-		var abs_left = u.gcs(e, "left");
-		var abs_top = u.gcs(e, "top");
-		if(abs_left.match(/px/)) {
-			e.translate_offset_x = parseInt(abs_left);
-		}
-		else {
-			e.translate_offset_x = u.relX(e);
-		}
-		if(abs_top.match(/px/)) {
-			e.translate_offset_y = parseInt(abs_top);
-		}
-		else {
-			e.translate_offset_y = u.relY(e);
-		}
-		e.element_x = e.element_x ? e.element_x : 0;
-		e.element_y = e.element_y ? e.element_y : 0;
-		e._x = e._x ? e._x : 0;
-		e._y = e._y ? e._y : 0;
-		if(this.support()) {
-			e.style[this.variant()+"Transition"] = "none";
-		}
-	}
-	if(e.duration) {
-		e.x_start = e._x;
-		e.y_start = e._y;
-		e.translate_transitions = e.duration/25;
-		e.translate_progress = 0;
-		e.x_change = (x - e.x_start) / e.translate_transitions;
-		e.y_change = (y - e.y_start) / e.translate_transitions;
-		e.translate_transitionTo = function(event) {
-			++this.translate_progress;
-			var new_x = (Number(this.x_start) + Number(this.translate_progress * this.x_change));
-			var new_y = (Number(this.y_start) + Number(this.translate_progress * this.y_change));
-			e.style["msTransform"] = "translate("+ new_x + "px, " + new_y +"px)";
-			if(this.translate_progress < this.translate_transitions) {
-				this.t_transition = u.t.setTimer(this, this.translate_transitionTo, 25);
-			}
-			else {
-				if(typeof(this.transitioned) == "function") {
-					this.transitioned(event);
-				}
-			}
-		}
-		e.translate_transitionTo();
-	}
-	else {
-		e.style["msTransform"] = "translate("+ x + "px, " + y +"px)";
-	}
-	e.element_x = x;
-	e.element_y = y;
-	e._x = x;
-	e._y = y;
-	e.transition_timestamp = new Date().getTime();
-	e.offsetHeight;
-}
-u.a._callback = function(event) {
-	if(typeof(this.transitioned) == "function") {
-		this.transitioned(event);
-	}
-}
 
 /*u-init-domready.js*/
 if(!u.o) {
@@ -2572,184 +2367,99 @@ else {
 	u.e.addEvent(window, "load", u.init);
 }
 
-/*i-hwundintro980x300.js*/
-Util.Objects["hwundintro980x300"] = new function() {
-	this.init = function(banner) {
-		banner._initialized = true;
-		banner._version = "tablet,full";
-		banner.t_delay = false;
-		banner._isreset = true;
-		banner._iscleared = true;
-		banner._initcontent = banner.innerHTML;
-		banner._images = new Array();
-		for(i = 0; i <= 84; i++) {
-			banner._images.push("/feber_980/funstuff/intro_980x300/img/sequence/IntroBanner_V003_" + ((i > 9 ? i > 99 ? i > 999 ? "0" : "00" : "000" : "0000") + i) + ".jpg");
-		}
-		banner._framerate = 1000/12; // 12 frames a second
-		banner.cleared = function() {
-			this.innerHTML = this._initcontent;
-		}
-		banner.ready = function(play) {
-			this._autoplay = play;
-			this._isreset = false;
-			this._iscleared = false;
-			u.o.banner.init(this);
-			this.h2 = u.qs("h2", this);
-			this.h2.banner = this;
-			this.h3 = u.qs("h3", this);
-			this.h3.banner = this;
-			this.logo = u.qs(".logo", this);
-			this.learnmore = u.qs(".learnmore", this);
-			this.learnmore.banner = this;
-			u.link(this.learnmore);
-			this.learnmore.moved = function(event) {
-				u.e.resetEvents(this);
-			}
-			this.learnmore.clicked = function() {
-				window.open(this.url, "_blank");
-			}
-			this.fullclick = u.ae(this, "div", {"class":"fullclick"});
-			this.fullclick.banner = this;
-			u.e.click(this.fullclick);
-			this.fullclick.moved = function(event) {
-				u.e.resetEvents(this);
-			}
-			this.fullclick.clicked = function() {
-				window.open(this.banner.learnmore.url, "_blank");
-			}
-			u.a.transition(this.h3, "none");
-			u.a.translate(this.h3, -this.offsetWidth, 0);
-			u.as(this.h3, "display", "block");
-			u.a.setOpacity(this.h3, 1);
-			this.preload(0, 79, "sq1", 1500);
-		}
-		banner.sq1 = function() {
-			u.a.transition(this.h2, "all 0.6s ease-in");
-			u.a.translate(this.h2, -this.offsetWidth, 0);
-			u.a.transition(this.learnmore, "all 1s ease-in");
-			u.a.setOpacity(this.learnmore, 0);
-			this.t_delay = u.t.setTimer(this, this.sq2, 600);
-		}
-		banner.sq2 = function() {
-			this.setup(0, 79, "sq3");
-		}
-		banner.sq3 = function() {
-			u.a.transition(this.h3, "all 0.6s ease-in");
-			u.a.translate(this.h3, 0, 0);
-			this.setup(79, this._images.length-1, "sq4");
-		}
-		banner.sq4 = function() {
-			u.a.transition(this.learnmore, "all 0.5s ease-in");
-			u.a.setOpacity(this.learnmore, 1);
-			this.prerollclick = u.ae(this, "div", {"class":"prerollclick"});
-			this.prerollclick.banner = this;
-			u.e.click(this.prerollclick);
-			this.prerollclick.clicked = function() {
-				window.open("http://script.tailsweep.com/csClick/17331107/http://www.youtube.com/watch?v=qOpt8kOvhmY", "_blank");
-			}
-		}
-		banner.ready(true);
+/*beta-u-audio.js*/
+Util.audioPlayer = function(node) {
+	var player;
+	if(node) {
+		player = u.ae(node, "div", {"class":"audioplayer"});
 	}
-}
-/*i-hwundintro980x300-mobile.js*/
-Util.Objects["hwundintro980x300_mobile"] = new function() {
-	this.init = function(banner) {
-		banner._initialized = true;
-		banner._version = "mobile";
-		banner.t_delay = false;
-		banner._isreset = true;
-		banner._iscleared = true;
-		banner._initcontent = banner.innerHTML;
-		banner._images = new Array();
-		for(i = 0; i <= 79; i++) {
-			banner._images.push("/feber_980/funstuff/intro_980x300/img/sequence_mobile/IntroBanner_Mobile_V001_" + ((i > 9 ? i > 99 ? i > 999 ? "0" : "00" : "000" : "0000") + i) + ".jpg");
-		}
-		banner._framerate = 1000/12; // 12 frames a second
-		banner.cleared = function() {
-			this.innerHTML = this._initcontent;
-		}
-		banner.ready = function(play) {
-			this._autoplay = play;
-			this._isreset = false;
-			this._iscleared = false;
-			u.o.banner.init(this);
-			this.h2 = u.qs("h2", this);
-			this.h2.banner = this;
-			this.logo = u.qs(".logo", this);
-			this.learnmore = u.qs(".learnmore", this);
-			this.learnmore.banner = this;
-			u.link(this.learnmore);
-			this.learnmore.moved = function(event) {
-				u.e.resetEvents(this);
-			}
-			this.learnmore.clicked = function() {
-				window.open(this.url, "_blank");
-			}
-			this.fullclick = u.ae(this, "div", {"class":"fullclick"});
-			this.fullclick.banner = this;
-			u.e.click(this.fullclick);
-			this.fullclick.moved = function(event) {
-				u.e.resetEvents(this);
-			}
-			this.fullclick.clicked = function() {
-				window.open(this.banner.learnmore.url, "_blank");
-			}
-			u.a.transition(this.logo, "none");
-			u.as(this.logo, "display", "none");
-			u.a.setOpacity(this.logo, 0);
-			u.a.transition(this.logo, "none");
-			u.a.translate(this.logo, this.offsetWidth, 0);
-			u.as(this.logo, "display", "block");
-			u.a.setOpacity(this.logo, 1);
-			this.preload(0, this.nodes.length-1, "sq1", 1500);
-		}
-		banner.sq1 = function() {
-			u.a.transition(this.h2, "all 0.4s ease-in");
-			u.a.translate(this.h2, -this.offsetWidth, 0);
-			this.t_delay = u.t.setTimer(this, this.sq1_logo_in, 400);
-		}
-		banner.sq1_logo_in = function() {
-			u.a.transition(this.logo, "all 0.4s ease-in");
-			u.a.translate(this.logo, 0, 0);
-			this.t_delay = u.t.setTimer(this, this.sq1_logo_out, 1600);
-		}
-		banner.sq1_logo_out = function() {
-			u.a.transition(this.logo, "all 0.4s ease-in");
-			u.a.translate(this.logo, -(this.offsetWidth), 0);
-			this.sq2();
-		}
-		banner.sq2 = function() {
-			u.a.transition(this.animation, "none");
-			u.a.setOpacity(this.animation, 1);
-			this.setup(0, this.nodes.length-1, "sq3");
-		}
-		banner.sq3 = function() {
-			this.resetAnimation();
-			u.a.transition(this.logo, "none");
-			u.a.translate(this.logo, this.offsetWidth, 0);
-			u.as(this.logo, "display", "block");
-			u.a.transition(this.logo, "all 0.6s ease-in");
-			u.a.translate(this.logo, 0, 0);
-			this.t_delay = u.t.setTimer(this, this.sq4, 1600);
-		}
-		banner.sq4 = function() {
-			u.a.transition(this.logo, "none");
-			u.a.transition(this.logo, "all 0.6s ease-in");
-			u.a.translate(this.logo, -29, 13);
-			u.a.setHeight(this.logo, 20);
-			u.a.setWidth(this.logo, 106);
-			this.sq5();
-		}
-		banner.sq5 = function() {
-			u.a.transition(this.learnmore, "none");
-			u.as(this.learnmore, "display", "block");
-			u.a.translate(this.learnmore, this.offsetWidth, 0);
-			u.a.setOpacity(this.learnmore, 1);
-			u.a.transition(this.learnmore, "all 0.6s ease-in");
-			u.a.translate(this.learnmore, 0, 0);
-		}
-		banner.ready(true);
+	else {
+		player = document.createElement("div");
+		u.ac(player, "audioplayer");
 	}
+	player.audio = u.ae(player, "audio");
+	player.audio.controls = false;
+	if(typeof(player.audio.play) == "function") {
+		player.load = function(src) {
+			if(this.playing) {
+				this.stop();
+			}
+			if(src) {
+				this.audio.src = this.correctSource(src);
+				this.audio.load();
+			}
+		}
+		player.play = function(position) {
+			this.playing = true;
+			position = position ? position : 0;
+			if(this.audio.src) {
+				this.audio.play();
+			}
+		}
+		player.loadAndPlay = function(src, position) {
+			this.load(src);
+			this.play(position);
+		}
+		player.pause = function() {
+			this.playing = false;
+			this.audio.pause();
+		}
+		player.stop = function() {
+			this.pause();
+		}
+		player._loadstart = function(event) {
+			u.removeClass(this.parentNode, "ready")
+			u.addClass(this.parentNode, "loading");
+		}
+		u.e.addEvent(player.audio, "loadstart", player._loadstart);
+		player._canplaythrough = function(event) {
+			u.removeClass(this.parentNode, "loading")
+			u.addClass(this.parentNode, "ready");
+		}
+		u.e.addEvent(player.audio, "canplaythrough", player._canplaythrough);
+		player._loadeddata = function(event) {
+			this.parentNode.videoLoaded = true;
+			if(typeof(this.parentNode.loadeddata) == "function") {
+				this.parentNode.loadeddata(event);
+			}
+		}
+		u.e.addEvent(player.audio, "loadeddata", player._loadeddata);
+		player._ended = function(event) {
+			u.rc(this, "playing|paused");
+			if(typeof(this.parentNode.ended) == "function") {
+				this.parentNode.ended(event);
+			}
+		}
+		u.e.addEvent(player.audio, "ended", player._ended);
+		player._loadedmetadata = function(event) {
+			u.bug("1", "loadedmetadata:duration:" + this.duration);
+			u.bug("1", "loadedmetadata:currentTime:" + this.currentTime);
+		}
+	}
+	else if(typeof(u.audioPlayerFallback) == "function") {
+		player.removeChild(player.video);
+		player = u.audioPlayerFallback(player);
+	}
+	else {
+		player.load = function() {}
+		player.play = function() {}
+		player.loadAndPlay = function() {}
+		player.pause = function() {}
+		player.stop = function() {}
+	}
+	player.correctSource = function(src) {
+		src = src.replace(/.mp3|.ogg|.wav/, "");
+		if(this.audio.canPlayType("audio/mpeg")) {
+			return src+".mp3";
+		}
+		else if(this.audio.canPlayType("audio/ogg")) {
+			return src+".ogg";
+		}
+		else {
+			return src+".wav";
+		}
+	}
+	return player;
 }
 /*i-banner.js*/
 Util.Objects["banner"] = new function() {
@@ -2895,6 +2605,8 @@ Util.Objects["banner"] = new function() {
 					u.a.transition(this, "none");
 					this.transitioned = null;
 				}
+				u.a.transition(document.body, "all 0.3s ease-in");
+				u.as(document.body, "backgroundColor", u.qs(".hw_banner_controller")._bg_color);
 				this.stopAnimation();
 				u.t.resetTimer(this.t_delay);
 				u.t.resetTimer(this.t_loadeddelay);
@@ -2985,101 +2697,1857 @@ Util.Objects["banner"] = new function() {
 		}
 	}
 }
-/*i-banners.js*/
-Util.Objects["hwundcontroller"] = new function() {
+/*i-banner-a.js*/
+Util.Objects["hwundwina"] = new function() {
 	this.init = function(banner) {
-		u.bug_position = "fixed";
-		u.bug_force = true;
-		var ctl = u.qs(".hwundcontroller");
-		if(!ctl || !ctl.banners) {
-			u.ac(banner, "hwundcontroller");
-			ctl = banner;
-			ctl.banners = new Array();
-			ctl._bg_color = u.gcs(document.body, "background-color");
-			ctl.t_scroll = false;
-			ctl.current_state = false;
-			ctl.globalReset = function() {
-				var i, banner;
-				for(i = 0; banner = this.banners[i]; i++) {
-					if(banner.in_focus) {
-						banner._reset(this.current_state);
-					}
-					else {
-						if(!u.hc(banner, this.current_state)) {
-							u.rc(banner, "full|tablet|mobile", 1);
-							u.ac(banner, this.current_state);
-						}
-					}
+		banner._initialized = true;
+		banner._version = "tablet,full";
+		banner.t_delay = false;
+		banner._isreset = true;
+		banner._iscleared = true;
+		banner._initcontent = banner.innerHTML;
+		banner._images = new Array();
+		for(i = 0; i <= 84; i++) {
+			banner._images.push("/win8/funstuff/v8/img/a/IntroBanner_V003_" + ((i > 9 ? i > 99 ? i > 999 ? "0" : "00" : "000" : "0000") + i) + ".jpg");
+		}
+		banner._framerate = 1000/12; // 12 frames a second
+		banner.cleared = function() {
+			this.innerHTML = this._initcontent;
+		}
+		banner.ready = function(play) {
+			document.body.transitioned = function() {
+				u.a.transition(this, "none");
+				this.transitioned = null;
+			}
+			u.a.transition(document.body, "all 0.3s ease-in");
+			u.as(document.body, "backgroundColor", u.gcs(this, "background-color"));
+			this._autoplay = play;
+			this._isreset = false;
+			this._iscleared = false;
+			u.o.banner.init(this);
+			this.h2 = u.qs("h2", this);
+			this.h2.banner = this;
+			this.h3 = u.qs("h3", this);
+			this.h3.banner = this;
+			this.logo = u.qs(".logo", this);
+			this.learnmore = u.qs(".learnmore", this);
+			this.learnmore.banner = this;
+			u.link(this.learnmore);
+			this.learnmore.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.learnmore.clicked = function() {
+				window.open(this.url, "_blank");
+			}
+			this.fullclick = u.ae(this, "div", {"class":"fullclick"});
+			this.fullclick.banner = this;
+			u.e.click(this.fullclick);
+			this.fullclick.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.fullclick.clicked = function() {
+				window.open(this.banner.learnmore.url, "_blank");
+			}
+			u.a.transition(this.h3, "none");
+			u.a.translate(this.h3, -this.offsetWidth, 0);
+			u.as(this.h3, "display", "block");
+			u.a.setOpacity(this.h3, 1);
+			this.preload(0, 79, "sq1", 1500);
+		}
+		banner.sq1 = function() {
+			u.a.transition(this.h2, "all 0.6s ease-in");
+			u.a.translate(this.h2, -this.offsetWidth, 0);
+			u.a.transition(this.learnmore, "all 1s ease-in");
+			u.a.setOpacity(this.learnmore, 0);
+			this.t_delay = u.t.setTimer(this, this.sq2, 600);
+		}
+		banner.sq2 = function() {
+			this.setup(0, 79, "sq3");
+		}
+		banner.sq3 = function() {
+			u.a.transition(this.h3, "all 0.6s ease-in");
+			u.a.translate(this.h3, 0, 0);
+			this.setup(79, this._images.length-1, "sq4");
+		}
+		banner.sq4 = function() {
+			u.a.transition(this.learnmore, "all 0.5s ease-in");
+			u.a.setOpacity(this.learnmore, 1);
+			this.prerollclick = u.ae(this, "div", {"class":"prerollclick"});
+			this.prerollclick.banner = this;
+			u.e.click(this.prerollclick);
+			this.prerollclick.clicked = function() {
+				window.open("http://www.youtube.com/watch?v=qOpt8kOvhmY", "_blank");
+			}
+		}
+		banner.ready(true);
+	}
+}
+/*i-banner-a-mobile.js*/
+Util.Objects["hwundwina_mobile"] = new function() {
+	this.init = function(banner) {
+		banner._initialized = true;
+		banner._version = "mobile";
+		banner.t_delay = false;
+		banner._isreset = true;
+		banner._iscleared = true;
+		banner._initcontent = banner.innerHTML;
+		banner._images = new Array();
+		for(i = 0; i <= 84; i++) {
+			banner._images.push("/win8/funstuff/v8/img/a_mobile/IntroBanner_Mobile_V001_" + ((i > 9 ? i > 99 ? i > 999 ? "0" : "00" : "000" : "0000") + i) + ".jpg");
+		}
+		banner._framerate = 1000/12; // 12 frames a second
+		banner.cleared = function() {
+			this.innerHTML = this._initcontent;
+		}
+		banner.ready = function(play) {
+			document.body.transitioned = function() {
+				u.a.transition(this, "none");
+				this.transitioned = null;
+			}
+			u.a.transition(document.body, "all 0.3s ease-in");
+			u.as(document.body, "backgroundColor", u.gcs(this, "background-color"));
+			this._autoplay = play;
+			this._isreset = false;
+			this._iscleared = false;
+			u.o.banner.init(this);
+			this.h2 = u.qs("h2", this);
+			this.h2.banner = this;
+			this.logo = u.qs(".logo", this);
+			this.learnmore = u.qs(".learnmore", this);
+			this.learnmore.banner = this;
+			u.link(this.learnmore);
+			this.learnmore.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.learnmore.clicked = function() {
+				window.open(this.url, "_blank");
+			}
+			this.fullclick = u.ae(this, "div", {"class":"fullclick"});
+			this.fullclick.banner = this;
+			u.e.click(this.fullclick);
+			this.fullclick.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.fullclick.clicked = function() {
+				window.open(this.banner.learnmore.url, "_blank");
+			}
+			u.a.transition(this.logo, "none");
+			u.as(this.logo, "display", "none");
+			u.a.setOpacity(this.logo, 0);
+			u.a.transition(this.logo, "none");
+			u.a.translate(this.logo, this.offsetWidth, 0);
+			u.as(this.logo, "display", "block");
+			u.a.setOpacity(this.logo, 1);
+			this.preload(0, this.nodes.length-1, "sq1", 1500);
+		}
+		banner.sq1 = function() {
+			u.a.transition(this.h2, "all 0.4s ease-in");
+			u.a.translate(this.h2, -this.offsetWidth, 0);
+			this.t_delay = u.t.setTimer(this, this.sq1_logo_in, 400);
+		}
+		banner.sq1_logo_in = function() {
+			u.a.transition(this.logo, "all 0.4s ease-in");
+			u.a.translate(this.logo, 0, 0);
+			this.t_delay = u.t.setTimer(this, this.sq1_logo_out, 1600);
+		}
+		banner.sq1_logo_out = function() {
+			u.a.transition(this.logo, "all 0.4s ease-in");
+			u.a.translate(this.logo, -(this.offsetWidth), 0);
+			this.sq2();
+		}
+		banner.sq2 = function() {
+			u.a.transition(this.animation, "none");
+			u.a.setOpacity(this.animation, 1);
+			this.setup(0, this.nodes.length-1, "sq3");
+		}
+		banner.sq3 = function() {
+			this.resetAnimation();
+			u.a.transition(this.logo, "none");
+			u.a.translate(this.logo, this.offsetWidth, 0);
+			u.as(this.logo, "display", "block");
+			u.a.transition(this.logo, "all 0.6s ease-in");
+			u.a.translate(this.logo, 0, 0);
+			this.t_delay = u.t.setTimer(this, this.sq4, 1600);
+		}
+		banner.sq4 = function() {
+			u.a.transition(this.logo, "none");
+			u.a.transition(this.logo, "all 0.6s ease-in");
+			u.a.translate(this.logo, -29, 13);
+			u.a.setHeight(this.logo, 20);
+			u.a.setWidth(this.logo, 106);
+			this.sq5();
+		}
+		banner.sq5 = function() {
+			u.a.transition(this.learnmore, "none");
+			u.as(this.learnmore, "display", "block");
+			u.a.translate(this.learnmore, this.offsetWidth, 0);
+			u.a.setOpacity(this.learnmore, 1);
+			u.a.transition(this.learnmore, "all 0.6s ease-in");
+			u.a.translate(this.learnmore, 0, 0);
+		}
+		banner.ready(true);
+	}
+}
+/*i-banner-b.js*/
+Util.Objects["hwundwinb"] = new function() {
+	this.init = function(banner) {
+		banner._initialized = true;
+		banner._version = "tablet,full";
+		banner.t_delay = false;
+		banner._isreset = true;
+		banner._iscleared = true;
+		banner._interaction = false;
+		banner.t_interaction = false;
+		banner.t_out = false;
+		banner._shown = false;
+		banner._initcontent = banner.innerHTML;
+		banner._images = new Array();
+		for(i = 0; i <= 58; i++) {
+			banner._images.push("/win8/funstuff/v8/img/b/LiveTile_V005_intro_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
+		}
+		for(i = 0; i <= 18; i++) {
+			banner._images.push("/win8/funstuff/v8/img/b/Tile_Mail_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
+		}
+		for(i = 0; i <= 18; i++) {
+			banner._images.push("/win8/funstuff/v8/img/b/Tile_PeopleHub_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
+		}
+		for(i = 0; i <= 18; i++) {
+			banner._images.push("/win8/funstuff/v8/img/b/LiveTile_Weather_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
+		}
+		for(i = 0; i <= 18; i++) {
+			banner._images.push("/win8/funstuff/v8/img/b/Tile_Foto_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
+		}
+		for(i = 0; i <= 18; i++) {
+			banner._images.push("/win8/funstuff/v8/img/b/Tile_Nyheter_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
+		}
+		banner._framerate = 1000/12; // 12 frames a second
+		banner.hoverHint = function() {
+			this.hint1.transitioned = function() {
+				this.transitioned = null;
+				u.a.transition(this, "none");
+				this.transitioned = function() {
+					this.transitioned = null;
+					u.a.transition(this, "none");
+					this.banner.hoverHint();
 				}
-				this.t_scroll = u.t.setTimer(this, this.scrollHandler, 500);
+				u.a.transition(this, "all 1s ease-in-out");
+				u.a.setBgPos(this, 0, "50%");
 			}
-			window.scrollHandler = function() {
-				u.qs(".hwundcontroller").scrollHandler();
+			u.a.transition(this.hint1, "all 1s ease-in-out");
+			u.a.setBgPos(this.hint1, 5, "50%");
+		}
+		banner.updateHeading = function(tile) {
+			u.a.transition(this.h2, "none");
+			if(tile) {
+				this.h2.new_text = tile._h3.innerHTML;
 			}
-			ctl.scrollHandler = function() {
-				var scrolled_y = u.scrollY();
-				var browser_height = u.browserH();
-				var margin = (browser_height - browser_height*0.8)/2;
-				var focus_top = scrolled_y + margin;
-				var focus_bottom = scrolled_y + browser_height - margin;
-				var i, banner;
-				for(i = 0; banner = this.banners[i]; i++) {
-					banner.top_y = u.absY(banner);
-					banner.center_y = banner.top_y + (banner.offsetHeight/2);
-					banner.bottom_y = banner.top_y + banner.offsetHeight;
-					if(banner.center_y > focus_top && banner.center_y < focus_bottom) {
-						if(!banner.in_focus || banner._iscleared) {
-							if(!banner._initialized || !banner._version.match(this.current_state)) {
-								if(this.current_state == "mobile") {
-									u.o[banner.id+"_"+this.current_state].init(banner);
-								}
-								else {
-									u.o[banner.id].init(banner);
-								}
-							}
-							else if(banner._iscleared) {
-								banner.ready(true);
-							}
-						}
-						else {
-							banner._autoplay = true;
-						}
-						banner.in_focus = true;
-					}
-					else {
-						if(banner.in_focus && !banner._isreset) {
-							banner._reset(this.current_state);
-							banner.in_focus = false;
+			else {
+				this.h2.new_text = this.h2.org_text;
+			}
+			this.h2.transitioned = function() {
+				u.a.transition(this, "none");
+				this.transitioned = null;
+				this.innerHTML = this.new_text;
+				u.a.transition(this, "all 0.3s ease-in");
+				u.a.translate(this, 0, 0);
+			}
+			if(this.h2.element_x != -this.offsetWidth) {
+				u.a.transition(this.h2, "all 0.3s ease-in");
+				u.a.translate(this.h2, -this.offsetWidth, 0);
+			}
+			else {
+				this.h2.transitioned();
+			}
+		}
+		banner.audioController = function(src, priority) {
+			if(this._interaction) {
+				if(!this.audioPlayer.playing || priority) {
+					if(typeof(this.audioPlayer.ended) != "function") {
+						this.audioPlayer.ended = function() {
+							this.ended = null;
+							this.banner.mute.soundStopped();
 						}
 					}
+					this.audioPlayer.loadAndPlay(src);
+					this.mute.soundPlaying();
 				}
 			}
-			u.e.addEvent(window, "scroll", window.scrollHandler);
-			window.resizeHandler = function() {
-				u.qs(".hwundcontroller").resizeHandler();
+		}
+		banner.ejectAudio = function() {
+			if(this.audioPlayer && this.audioPlayer.parentNode) {
+				this.audioPlayer.stop();
+				this.audioPlayer.parentNode.removeChild(this.audioPlayer);
+			} 
+		}
+		banner.activateTile = function(tile) {
+			tile.banner = this;
+			tile._h3 = u.qs("h3", tile);
+			tile._id = tile.className.match(/\d/);
+			u.a.transition(tile, "none");
+			u.a.setOpacity(tile, 0);
+			u.as(tile, "display", "block");
+			tile.hide = function() {
+				this.transitioned = null;
+				u.a.transition(this, "none");
+				u.rc(this, "show");
+				u.a.setOpacity(this, 0);
 			}
-			ctl.resizeHandler = function() {
-				u.t.resetTimer(this.t_scroll);
-				if(u.browserW() < 768) {
-					if(this.current_state != "mobile") {
-						this.current_state = "mobile";
-					}
+			tile.fade = function() {
+				u.a.transition(this, "none");
+				this.transitioned = function() {
+					u.a.transition(this, "none");
+					this.transitioned = null
+					u.rc(this, "show");
 				}
-				else if(u.browserW() < 980) {
-					if(this.current_state != "tablet") {
-						this.current_state = "tablet";
-					}
+				if(u.gcs(this, "opacity") != 0) {
+					u.a.transition(this, "all 0.3s ease-in");
+					u.a.setOpacity(this, 0);
 				}
 				else {
-					if(this.current_state != "full") {
-						this.current_state = "full";
+					this.transitioned();
+				}
+				this.t_blink = u.t.setTimer(this, this.blink, 4000);
+			}
+			tile.blink = function() {
+				this.transitioned = null;
+				u.a.transition(this, "none");
+				u.a.setOpacity(this, 0);
+				u.ac(this, "show");
+				u.a.transition(this, "all 0.3s ease-in");
+				u.a.setOpacity(this, 1);
+				this.t_blink = u.t.setTimer(this, this.fade, 500);
+			}
+			u.e.click(tile);
+			tile.clicked = function(event) {
+				u.e.kill(event);
+				this.banner._interaction = true;
+				this.banner.hint1.transitioned = null;
+				u.a.transition(this.banner.hint1, "all 0.3s ease-in");
+				u.a.translate(this.banner.hint1, this.banner.offsetWidth, 0);
+				if(this.banner._shown) {
+					u.t.resetTimer(this.banner.t_delay);
+					this.banner.tileRepeat = null;
+					this.banner.tileWaiting = null;
+					this.banner.audioPlayer.stop();
+					this.banner.tileDone = function() {
+						this.tileDone = null;
+						this.startTiles();
+						this.updateHeading();
+					}
+					this.banner["sqTile" + this.banner._shown + "out"]();
+					this.banner._shown = false;
+				}
+				else {
+					this.banner._shown = this._id;
+					this.banner.pauseTiles();
+					this.banner.updateHeading(this);
+					this.banner.tileRepeat = function() {
+						this["sqTile" + this._shown + "repeat"]();
+					}
+					this.banner.tileWaiting = function() {
+						this.t_delay = u.t.setTimer(this, this.tileRepeat, 2000);
+					}
+					this.banner.audioPlayer.ended = function() {
+						this.ended = null;
+						u.t.resetTimer(this.banner.t_delay);
+						this.banner.tileRepeat = null;
+						this.banner.tileWaiting = null;
+						this.banner.mute.soundStopped();
+						this.banner.tileDone = function() {
+							this.tileDone = null;
+							this.updateHeading();
+							this.startTiles();
+							this._shown = false;
+						}
+						this.banner["sqTile" + this.banner._shown + "out"]();
+					}
+					this.banner.audioController("/win8/funstuff/v8/audio/tiles_" + this.banner._shown + ".mp3", 1);
+					this.banner["sqTile" + this.banner._shown + "in"]();
+				}
+			}
+		}
+		banner.pauseTiles = function() {
+			this.tile_mail.transitioned = null;
+			this.tile_people.transitioned = null;
+			this.tile_weather.transitioned = null;
+			this.tile_photos.transitioned = null;
+			this.tile_news.transitioned = null;
+			u.t.resetTimer(this.tile_mail.t_blink);
+			u.t.resetTimer(this.tile_people.t_blink);
+			u.t.resetTimer(this.tile_weather.t_blink);
+			u.t.resetTimer(this.tile_photos.t_blink);
+			u.t.resetTimer(this.tile_news.t_blink);
+			if(typeof(this.tile_mail.hide) == "function") {
+				this.tile_mail.hide();
+			}
+			if(typeof(this.tile_people.hide) == "function") {
+				this.tile_people.hide();
+			}
+			if(typeof(this.tile_weather.hide) == "function") {
+				this.tile_weather.hide();
+			}
+			if(typeof(this.tile_photos.hide) == "function") {
+				this.tile_photos.hide();
+			}
+			if(typeof(this.tile_news.hide) == "function") {
+				this.tile_news.hide();
+			}
+		}
+		banner.startTiles = function() {
+			this.tile_mail.t_blink = u.t.setTimer(this.tile_mail, this.tile_mail.blink, 200);
+			this.tile_people.t_blink = u.t.setTimer(this.tile_people, this.tile_people.blink, 700);
+			this.tile_weather.t_blink = u.t.setTimer(this.tile_weather, this.tile_weather.blink, 1200);
+			this.tile_photos.t_blink = u.t.setTimer(this.tile_photos, this.tile_photos.blink, 1700);
+			this.tile_news.t_blink = u.t.setTimer(this.tile_news, this.tile_news.blink, 2200);
+		}
+		banner.cleared = function() {
+			this.innerHTML = this._initcontent;
+		}
+		banner.ready = function(play) {
+			document.body.transitioned = function() {
+				u.a.transition(this, "none");
+				this.transitioned = null;
+			}
+			u.a.transition(document.body, "all 0.3s ease-in");
+			u.as(document.body, "backgroundColor", u.gcs(this, "background-color"));
+			this._autoplay = play;
+			this._isreset = false;
+			this._iscleared = false;
+			u.o.banner.init(this);
+			this.h2 = u.qs("h2", this);
+			this.h2.banner = this;
+			this.h2.org_text = this.h2.innerHTML;
+			this.hint1 = u.qs(".hint1", this);
+			this.hint1.banner = this;
+			this.tile_mail = u.qs(".tile.mail", this);
+			this.tile_mail.banner = this;
+			this.tile_people = u.qs(".tile.people", this);
+			this.tile_people.banner = this;
+			this.tile_weather = u.qs(".tile.weather", this);
+			this.tile_weather.banner = this;
+			this.tile_photos = u.qs(".tile.photos", this);
+			this.tile_photos.banner = this;
+			this.tile_news = u.qs(".tile.news", this);
+			this.tile_news.banner = this;
+			this.logo = u.qs(".logo", this);
+			this.learnmore = u.qs(".learnmore", this);
+			this.learnmore.banner = this;
+			u.link(this.learnmore);
+			this.learnmore.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.learnmore.clicked = function() {
+				window.open(this.url, "_blank");
+			}
+			u.a.transition(this.hint1, "none");
+			u.a.translate(this.hint1, this.offsetWidth, 0);
+			u.as(this.hint1, "display", "block");
+			u.a.setOpacity(this.hint1, 1);
+			if(!this._interaction && u.e.event_pref == "mouse") {
+				this.onmouseover = function() {
+					if(!this._interaction && !this._hover_time) {
+						this._hover_time = new Date().getTime();
+						u.t.resetTimer(this.t_interaction);
+						this.t_interaction = u.t.setTimer(this, this.interacted, 1000);
+					}
+					else if(this._interaction && this.audioPlayer && !this.audioPlayer.playing) {
+						this.audioController("/win8/funstuff/v8/audio/tiles_intro.mp3")
+					}
+					u.t.resetTimer(this.t_out);
+				}
+				this.onmouseout = function() {
+					this.t_out = u.t.setTimer(this, this.actualOut, 100);
+				}
+				this.actualOut = function() {
+					if(this._interaction) {
+						this.mute.soundStopped();
+						this.audioPlayer.stop();
+						if(this._shown) {
+							u.t.resetTimer(this.t_delay);
+							this.tileRepeat = null;
+							this.tileWaiting = null;
+							this.tileDone = function() {
+								this.tileDone = null;
+								this.updateHeading();
+								this.startTiles();
+								this._shown = false;
+							}
+							this["sqTile" + this._shown + "out"]();
+						}
+					}
+					else {
+						u.t.resetTimer(this.t_interaction);
+						this._hover_time = false;
 					}
 				}
-				this.globalReset();
+				this.interacted = function() {
+					if(this._hover_time && (new Date().getTime() - this._hover_time) > 1000) {
+						this._interaction = true;
+						this.audioController("/win8/funstuff/v8/audio/tiles_intro.mp3");
+						u.t.resetTimer(this.t_interaction);
+						u.t.resetTimer(this.t_out);
+					}
+				}
 			}
-			u.e.addEvent(window, "resize", window.resizeHandler);
+			this.audioPlayer = u.audioPlayer(this);
+			this.audioPlayer.banner = this;
+			this.easter_1 = u.ae(this, "div", {"class":"easter easter_1"});
+			this.easter_1.banner = this;
+			this.easter_2 = u.ae(this, "div", {"class":"easter easter_2"});
+			this.easter_2.banner = this;
+			this.touchscreen = u.ae(this, "div", {"class":"easter touchscreen"});
+			this.touchscreen.banner = this;
+			u.e.click(this.touchscreen);
+			this.touchscreen.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.touchscreen.clicked = function(event) {
+				var tiles = u.qsa(".tile", this.banner);
+				var random_tile = Math.floor(Math.random()*5);
+				tiles[random_tile].clicked(event);
+			}
+			u.e.click(this.easter_1);
+			this.easter_1.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.easter_1.clicked = function(event) {
+				if(this.banner._shown) {
+					this.banner.tile_mail.clicked(event);
+				}
+				else {
+					this.banner.audioController("/win8/funstuff/v8/audio/tiles_easter_"+ (Math.random() > 0.5 ? "1" : "2") +".mp3", 1);
+				}
+			}
+			u.e.click(this.easter_2);
+			this.easter_2.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.easter_2.clicked = function(event) {
+				if(this.banner._shown) {
+					this.banner.tile_mail.clicked(event);
+				}
+				else {
+					this.banner.audioController("/win8/funstuff/v8/audio/tiles_easter_3.mp3", 1);
+				}
+			}
+			this.mute = u.ae(this, "div", {"class":"mute"});
+			this.mute.banner = this;
+			this.mute.fadeDown = function() {
+				u.a.transition(this, "none");
+				u.a.transition(this, "all 1s ease-in-out");
+				u.a.setOpacity(this, 0.5);
+				if(this.playback) {
+					this.t_sound = u.t.setTimer(this, this.fadeUp, 1000);
+				}
+			}
+			this.mute.fadeUp = function() {
+				u.a.transition(this, "none");
+				u.a.transition(this, "all 1s ease-in-out");
+				u.a.setOpacity(this, 0.8);
+				if(this.playback) {
+					this.t_sound = u.t.setTimer(this, this.fadeDown, 1000);
+				}
+			}
+			this.mute.soundPlaying = function() {
+				if(!this.playback && !this.muted) {
+					this.playback = true;
+					this.fadeDown();
+				}
+			}
+			this.mute.soundStopped = function() {
+				this.playback = false;
+				u.t.resetTimer(this.t_sound);
+				u.a.transition(this, "all 0.2s ease-in-out");
+				u.a.setOpacity(this, 1);
+			}
+			u.e.click(this.mute);
+			this.mute.clicked = function() {
+				u.a.transition(this, "none");
+				if(!this.muted) {
+					this.banner.audioPlayer.audio.volume = 0;
+					u.ac(this, "muted");
+					this.muted = true;
+					this.soundStopped();
+				}
+				else {
+					this.banner.audioPlayer.audio.volume = 1;
+					this.muted = false;
+					u.rc(this, "muted");
+					if(this.banner.audioPlayer.playing) {
+						this.soundPlaying();
+					}
+				}
+			}
+			this.preload(0, 58, "sq1", 1500);
 		}
-		ctl.banners.push(banner);
-		ctl.resizeHandler();
+		banner.sq1 = function() {
+			u.a.transition(this.animation, "none");
+			u.a.setOpacity(this.animation, 1);
+			this.setup(0, 58, "sq2");
+		}
+		banner.sq2 = function() {
+			u.a.transition(this.hint1, "all 0.4s ease-in");
+			u.a.translate(this.hint1, 0, 0);
+			this.hoverHint();
+			this.activateTile(this.tile_mail);
+			this.t_delay = u.t.setTimer(this, this.sq3, 300);
+		}
+		banner.sq3 = function() {
+			this.activateTile(this.tile_people);
+			this.t_delay = u.t.setTimer(this, this.sq4, 300);
+		}
+		banner.sq4 = function() {
+			this.activateTile(this.tile_weather);
+			this.t_delay = u.t.setTimer(this, this.sq5, 300);
+		}
+		banner.sq5 = function() {
+			this.activateTile(this.tile_photos);
+			this.t_delay = u.t.setTimer(this, this.sq6, 300);
+		}
+		banner.sq6 = function() {
+			this.activateTile(this.tile_news);
+			this.startTiles();
+			u.ac(this, "noloader");
+			this.preload(58, 153);
+		}
+		banner.sqTile1in = function() {
+			this.setup(59, 77, "tileWaiting");
+		}
+		banner.sqTile1repeat = function() {
+			if(this._current_frame == 77) {
+				this.setup(77, 72, "tileWaiting");
+			}
+			else {
+				this.setup(72, 77, "tileWaiting");
+			}
+		}
+		banner.sqTile1out = function() {
+			this.setup(67, 59, "tileDone");
+		}
+		banner.sqTile2in = function() {
+			this.setup(78, 96, "tileWaiting");
+		}
+		banner.sqTile2repeat = function() {
+			if(this._current_frame == 96) {
+				this.setup(96, 91, "tileWaiting");
+			}
+			else {
+				this.setup(91, 96, "tileWaiting");
+			}
+		}
+		banner.sqTile2out = function() {
+			this.setup(86, 78, "tileDone");
+		}
+		banner.sqTile3in = function() {
+			this.setup(97, 115, "tileWaiting");
+		}
+		banner.sqTile3repeat = function() {
+			if(this._current_frame == 115) {
+				this.setup(115, 110, "tileWaiting");
+			}
+			else {
+				this.setup(110, 115, "tileWaiting");
+			}
+		}
+		banner.sqTile3out = function() {
+			this.setup(105, 97, "tileDone");
+		}
+		banner.sqTile4in = function() {
+			this.setup(116, 134, "tileWaiting");
+		}
+		banner.sqTile4repeat = function() {
+			if(this._current_frame == 134) {
+				this.setup(134, 129, "tileWaiting");
+			}
+			else {
+				this.setup(129, 134, "tileWaiting");
+			}
+		}
+		banner.sqTile4out = function() {
+			this.setup(124, 116, "tileDone");
+		}
+		banner.sqTile5in = function() {
+			this.setup(135, 153, "tileWaiting");
+		}
+		banner.sqTile5repeat = function() {
+			if(this._current_frame == 153) {
+				this.setup(153, 148, "tileWaiting");
+			}
+			else {
+				this.setup(148, 153, "tileWaiting");
+			}
+		}
+		banner.sqTile5out = function() {
+			this.setup(143, 135, "tileDone");
+		}
+	}
+}
+/*i-banner-b-mobile.js*/
+Util.Objects["hwundwinb_mobile"] = new function() {
+	this.init = function(banner) {
+		banner._initialized = true;
+		banner._version = "mobile";
+		banner.t_delay = false;
+		banner._isreset = true;
+		banner._iscleared = true;
+		banner._initcontent = banner.innerHTML;
+		banner._images = new Array();
+		for(i = 0; i <= 113; i++) {
+			banner._images.push("/win8/funstuff/v8/img/b_mobile/LiveTiles_Mobile_V002_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
+		}
+		banner._framerate = 1000/12; // 12 frames a second
+		banner.cleared = function() {
+			this.innerHTML = this._initcontent;
+		}
+		banner.ready = function(play) {
+			document.body.transitioned = function() {
+				u.a.transition(this, "none");
+				this.transitioned = null;
+			}
+			u.a.transition(document.body, "all 0.3s ease-in");
+			u.as(document.body, "backgroundColor", u.gcs(this, "background-color"));
+			this._autoplay = play;
+			this._isreset = false;
+			this._iscleared = false;
+			u.o.banner.init(this);
+			this.h2 = u.qs("h2", this);
+			this.h2.banner = this;
+			this.h3 = u.qs("h3", this);
+			this.h3.banner = this;
+			this.logo = u.qs(".logo", this);
+			this.learnmore = u.qs(".learnmore", this);
+			this.learnmore.banner = this;
+			u.link(this.learnmore);
+			this.learnmore.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.learnmore.clicked = function() {
+				window.open(this.url, "_blank");
+			}
+			this.fullclick = u.ae(this, "div", {"class":"fullclick"});
+			this.fullclick.banner = this;
+			u.e.click(this.fullclick);
+			this.fullclick.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.fullclick.clicked = function() {
+				window.open(this.banner.learnmore.url, "_blank");
+			}
+			u.a.transition(this.h3, "none");
+			u.a.translate(this.h3, this.offsetWidth, 0);
+			u.as(this.h3, "display", "block");
+			u.a.setOpacity(this.h3, 1);
+			u.a.transition(this.logo, "none");
+			u.as(this.logo, "display", "none");
+			u.a.setOpacity(this.logo, 0);
+			u.a.transition(this.logo, "none");
+			u.a.translate(this.logo, this.offsetWidth, 0);
+			u.as(this.logo, "display", "block");
+			u.a.setOpacity(this.logo, 1);
+			this.preload(0, this.nodes.length-1, "sq1", 1500);
+		}
+		banner.sq1 = function() {
+			u.a.transition(this.h2, "all 0.4s ease-in");
+			u.a.translate(this.h2, -this.offsetWidth, 0);
+			this.t_delay = u.t.setTimer(this, this.sq1_logo_in, 600);
+		}
+		banner.sq1_logo_in = function() {
+			u.a.transition(this.logo, "all 0.4s ease-in");
+			u.a.translate(this.logo, 0, 0);
+			this.t_delay = u.t.setTimer(this, this.sq1_logo_out, 1600);
+		}
+		banner.sq1_logo_out = function() {
+			u.a.transition(this.logo, "all 0.4s ease-in");
+			u.a.translate(this.logo, -(this.offsetWidth), 0);
+			this.t_delay = u.t.setTimer(this, this.sq2, 600);
+		}
+		banner.sq2 = function() {
+			u.a.transition(this.animation, "none");
+			u.a.setOpacity(this.animation, 1);
+			this.setup(0, this.nodes.length-1, "sq3");
+		}
+		banner.sq3 = function() {
+			this.t_delay = u.t.setTimer(this, this.sq4, 100);
+		}
+		banner.sq4 = function() {
+			this.resetAnimation();
+			u.a.transition(this.h3, "all 0.4s ease-in");
+			u.a.translate(this.h3, 0, 0);
+			this.t_delay = u.t.setTimer(this, this.sq5, 1600);
+		}
+		banner.sq5 = function() {
+			u.a.transition(this.h3, "all 0.4s ease-in");
+			u.a.translate(this.h3, -this.offsetWidth, 0);
+			this.t_delay = u.t.setTimer(this, this.sq6, 400);
+		}
+		banner.sq6 = function() {
+			u.a.transition(this.logo, "none");
+			u.a.translate(this.logo, this.offsetWidth, 0);
+			u.as(this.logo, "display", "block");
+			u.a.transition(this.logo, "all 0.6s ease-in");
+			u.a.translate(this.logo, 0, 0);
+			this.t_delay = u.t.setTimer(this, this.sq7, 1600);
+		}
+		banner.sq7 = function() {
+			u.a.transition(this.logo, "none");
+			u.a.transition(this.logo, "all 0.6s ease-in");
+			u.a.translate(this.logo, -29, 13);
+			u.a.setHeight(this.logo, 20);
+			u.a.setWidth(this.logo, 106);
+			this.sq8();
+		}
+		banner.sq8 = function() {
+			u.a.transition(this.learnmore, "none");
+			u.as(this.learnmore, "display", "block");
+			u.a.translate(this.learnmore, this.offsetWidth, 0);
+			u.a.setOpacity(this.learnmore, 1);
+			u.a.transition(this.learnmore, "all 0.6s ease-in");
+			u.a.translate(this.learnmore, 0, 0);
+		}
+	}
+}
+/*i-banner-c.js*/
+Util.Objects["hwundwinc"] = new function() {
+	this.init = function(banner) {
+		banner._initialized = true;
+		banner._version = "tablet,full";
+		banner.t_delay = false;
+		banner._isreset = true;
+		banner._iscleared = true;
+		banner.selected_comp = false;
+		banner._initcontent = banner.innerHTML;
+		banner._images = new Array();
+		for(i = 0; i <= 194; i++) {
+			banner._images.push("/win8/funstuff/v8/img/c/PCSelector_16FPS_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
+		}
+		banner._framerate = 1000/16; // 12 frames a second
+		banner.updateHeading = function(comp) {
+			u.a.transition(this.h2, "none");
+			if(comp) {
+				this.h2.new_text = comp._h2.innerHTML;
+			}
+			else {
+				this.h2.new_text = this.h2.org_text;
+			}
+			this.h2.transitioned = function() {
+				this.transitioned = null;
+				u.a.transition(this, "none");
+				this.innerHTML = this.new_text;
+				u.a.transition(this, "all 0.3s ease-in");
+				u.a.translate(this, 0, 0);
+			}
+			if(this.h2.element_x != -this.offsetWidth) {
+				u.a.transition(this.h2, "all 0.3s ease-in");
+				u.a.translate(this.h2, -this.offsetWidth, 0);
+			}
+			else {
+				this.h2.transitioned();
+			}
+		}
+		banner.changeState = function(turn) {
+			this.selected_comp._new_state = turn;
+			this.selected_comp.specsHidden = function() {
+				this.specsHidden = null;
+				if(u.hc(this, "turn[1-9]")) {
+					var old_state = this.className.match(/turn(\d)/)[1];
+					this.banner.compTurned = function() {
+						this.compTurned = null;
+						u.rc(this.selected_comp, "turn[0-9]");
+						if(this.selected_comp._new_state) {
+							this.compTurned = function() {
+								this.compTurned = null;
+								this.selected_comp.showSpecs();
+							}
+							u.ac(this.selected_comp, "turn" + this.selected_comp._new_state);
+							this["c" + this.selected_comp._id + "turn"  + this.selected_comp._new_state + "in"]();
+						}
+						else {
+							this.selected_comp.showSpecs();
+						}
+					}
+					this.banner["c" + this.banner.selected_comp._id + "turn"  + old_state + "out"]();
+				}
+				else {
+					this.banner.compTurned = function() {
+						this.compTurned = null;
+						this.selected_comp.showSpecs();
+					}
+					u.ac(this.banner.selected_comp, "turn" + this.banner.selected_comp._new_state);
+					this.banner["c" + this.banner.selected_comp._id + "turn"  + this.banner.selected_comp._new_state + "in"]();
+				}
+			}
+			this.selected_comp.hideSpecs();
+		}
+		banner.selectComp = function(index) {
+			if(index < 1) {
+				index = 3;
+			}
+			else if(index > 3) {
+				index = 1;
+			}
+			if(!this.selected_comp) {
+				this.selected_index = index;
+				this.selected_comp = this["comp"+index];
+				this.updateHeading(this.selected_comp);
+				this.selected_comp.showSpecs();
+			}
+			else {
+				this.org_comp = this.selected_comp;
+				this.org_comp.hideSpecs();
+				this.selected_index = index;
+				this.selected_comp = this["comp"+index];
+				this.compTurned = function() {
+					this.compTurned = null;
+					u.rc(this.org_comp, "turn[0-9]");
+					this.compChanged = function() {
+						this.compChanged = null;
+						this.selected_comp.showSpecs();
+					}
+					this["c"+this.org_comp._id+"exit_c"+this.selected_comp._id+"enter"]();
+					this.updateHeading(this.selected_comp);
+				}
+				if(u.hc(this.org_comp, "turn[1-9]")) {
+					var turn = this.org_comp.className.match(/turn(\d)/)[1];
+					this["c"+this.org_comp._id+"turn"+turn+"out"]();
+				}
+				else {
+					this.compTurned();
+				}
+			}
+		}
+		banner.activateSpec = function(spec) {
+			spec._id = spec.className.match(/\d/);
+			spec.banner = this;
+			spec.spot = u.qs(".spot", spec);
+			spec.spot.spec = spec;
+			spec.fadeUp = function() {
+				u.a.transition(this.spot, "none");
+				this.spot.transitioned = function() {
+					this.spec.fadeDown();
+				}
+				if(u.gcs(this.spot, "opacity") != .8) {
+					u.a.transition(this.spot, "all 1s ease-in-out");
+					u.a.setOpacity(this.spot, .8);
+				}
+				else {
+					this.spot.transitioned();
+				}
+			}
+			spec.fadeDown = function() {
+				u.a.transition(this.spot, "none");
+				this.spot.transitioned = function() {
+					this.spec.fadeUp();
+				}
+				if(u.gcs(this.spot, "opacity") != .3) {
+					u.a.transition(this.spot, "all 1s ease-in-out");
+					u.a.setOpacity(this.spot, .3);
+				}
+				else {
+					this.spot.transitioned();
+				}
+			}
+			spec.pause = function() {
+				u.a.transition(this, "none");
+				this.transitioned = null;
+			}
+			spec.pulse = function() {
+				this.fadeUp();
+			}
+			u.e.click(spec);
+			spec.clicked = function() {
+				if(u.hc(this.comp, "turn" + this._id)) {
+					this.banner.changeState(0);
+				}
+				else {
+					this.banner.changeState(this._id);
+				}
+			}
+		}
+		banner.activateComp = function(comp) {
+			u.as(comp, "display", "none");
+			comp.banner = this;
+			comp._id = comp.className.match(/\d/);
+			comp._h2 = u.qs("h4", comp);
+			comp.spec1 = u.qs(".hotspot1", comp);
+			comp.spec1.comp = comp;
+			comp.spec2 = u.qs(".hotspot2", comp);
+			comp.spec2.comp = comp;
+			this.activateSpec(comp.spec1);
+			this.activateSpec(comp.spec2);
+			comp.showSpecs = function() {
+				u.a.transition(this, "none");
+				u.as(this, "display", "block");
+				this.spec1.pulse();
+				this.spec2.pulse();
+				u.a.transition(this, "all 0.3s ease-in");
+				u.a.setOpacity(this, 1);
+			}
+			comp.hideSpecs = function() {
+				this.spec1.pause();
+				this.spec2.pause();
+				this.transitioned = function() {
+					this.transitioned = null;
+					u.a.transition(this, "none");
+					u.as(this, "display", "none");
+					if(typeof(this.specsHidden) == "function") {
+						this.specsHidden();
+					}
+				}
+				if(u.gcs(this, "opacity") != 0) {
+					u.a.transition(this, "all 0.2s ease-in");
+					u.a.setOpacity(this, 0);
+				}
+				else {
+					this.transitioned();
+				}
+			}
+		}
+		banner.cleared = function() {
+			this.selected_comp = false;
+			this.innerHTML = this._initcontent;
+		}
+		banner.ready = function(play) {
+			document.body.transitioned = function() {
+				u.a.transition(this, "none");
+				this.transitioned = null;
+			}
+			u.a.transition(document.body, "all 0.3s ease-in");
+			u.as(document.body, "backgroundColor", u.gcs(this, "background-color"));
+			this._autoplay = play;
+			this._isreset = false;
+			this._iscleared = false;
+			u.o.banner.init(this);
+			this.h2 = u.qs("h2", this);
+			this.h2.banner = this;
+			this.h2.org_text = this.h2.innerHTML;
+			this.comp1 = u.qs(".comp.comp1", this);
+			this.comp2 = u.qs(".comp.comp2", this);
+			this.comp3 = u.qs(".comp.comp3", this);
+			this.logo = u.qs(".logo", this);
+			this.learnmore = u.qs(".learnmore", this);
+			this.learnmore.banner = this;
+			u.link(this.learnmore);
+			this.learnmore.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.learnmore.clicked = function() {
+				window.open(this.url, "_blank");
+			}
+			this.preload(0, 115, "sq1", 1500);
+		}
+		banner.sq1 = function() {
+			u.a.transition(this.h2, "all 0.3s ease-in");
+			u.a.translate(this.h2, -this.offsetWidth, 0);
+			this.setup(0, 115, "sq2");
+		}
+		banner.sq2 = function() {
+			this.activateComp(this.comp1);
+			this.activateComp(this.comp2);
+			this.activateComp(this.comp3);
+			this.preload(116, 194, "sq3");
+		}
+		banner.sq3 = function() {
+			this.selectComp(1);
+			this.showPrev = u.ae(this, "div", {"class":"show_prev"});
+			this.showPrev.banner = this;
+			u.a.setOpacity(this.showPrev, 0);
+			u.as(this.showPrev, "display", "block");
+			u.a.transition(this.showPrev, "all 0.5s ease-in");
+			u.a.setOpacity(this.showPrev, 1);
+			this.showNext = u.ae(this, "div", {"class":"show_next"});
+			this.showNext.banner = this;
+			u.a.setOpacity(this.showNext, 0);
+			u.as(this.showNext, "display", "block");
+			u.a.transition(this.showNext, "all 0.5s ease-in");
+			u.a.setOpacity(this.showNext, 1);
+			u.e.click(this.showPrev);
+			this.showPrev.clicked = function() {
+				this.banner.selectComp(this.banner.selected_index-1);
+			}
+			u.e.click(this.showNext);
+			this.showNext.clicked = function() {
+				this.banner.selectComp(this.banner.selected_index+1);
+			}
+		}
+		banner.c1exit_c2enter = function() {
+			this.setup(133, 139, "compChanged");
+		}
+		banner.c2exit_c1enter = function() {
+			this.setup(139, 133, "compChanged");
+		}
+		banner.c1exit_c3enter = function() {
+			this.setup(194, 184, "compChanged");
+		}
+		banner.c3exit_c1enter = function() {
+			this.setup(184, 194, "compChanged");
+		}
+		banner.c2exit_c3enter = function() {
+			this.setup(158, 168, "compChanged");
+		}
+		banner.c3exit_c2enter = function() {
+			this.setup(168, 158, "compChanged");
+		}
+		banner.c1turn1in = function() {
+			this.setup(115, 122, "compTurned");
+		}
+		banner.c1turn1out = function() {
+			this.setup(122, 115, "compTurned");
+		}
+		banner.c1turn2in = function() {
+			this.setup(123, 132, "compTurned");
+		}
+		banner.c1turn2out = function() {
+			this.setup(132, 123, "compTurned");
+		}
+		banner.c2turn1in = function() {
+			this.setup(140, 148, "compTurned");
+		}
+		banner.c2turn1out = function() {
+			this.setup(148, 140, "compTurned");
+		}
+		banner.c2turn2in = function() {
+			this.setup(149, 157, "compTurned");
+		}
+		banner.c2turn2out = function() {
+			this.setup(157, 149, "compTurned");
+		}
+		banner.c3turn1in = function() {
+			this.setup(169, 175, "compTurned");
+		}
+		banner.c3turn1out = function() {
+			this.setup(175, 169, "compTurned");
+		}
+		banner.c3turn2in = function() {
+			this.setup(176, 183, "compTurned");
+		}
+		banner.c3turn2out = function() {
+			this.setup(183, 176, "compTurned");
+		}
+	}
+}
+/*i-banner-c-mobile.js*/
+Util.Objects["hwundwinc_mobile"] = new function() {
+	this.init = function(banner) {
+		banner._initialized = true;
+		banner._version = "mobile";
+		banner.t_delay = false;
+		banner._isreset = true;
+		banner._iscleared = true;
+		banner._initcontent = banner.innerHTML;
+		banner._images = new Array();
+		for(i = 0; i <= 85; i++) {
+			banner._images.push("/win8/funstuff/v8/img/c_mobile/PcSelector_Mobile_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
+		}
+		banner._framerate = 1000/12; // 12 frames a second
+		banner.activateComp = function(comp) {
+			comp.banner = this;
+			comp._id = comp.className.match(/\d/);
+			comp._h3 = u.qs("h3", comp);
+			u.as(comp._h3, "display", "block");
+			comp.showSpec = function(spec) {
+				u.a.transition(spec, "none");
+				u.as(spec, "display", "block");
+				u.a.transition(spec, "all 0.3s ease-in");
+				u.a.setOpacity(spec, 1);
+			}
+			comp.hideSpec = function(spec) {
+				spec.transitioned = function() {
+					this.transitioned = null;
+					u.a.transition(this, "none");
+					u.as(this, "display", "none");
+					if(typeof(this.specHidden) == "function") {
+						this.specHidden();
+					}
+				}
+				if(u.gcs(spec, "opacity") != 0) {
+					u.a.transition(spec, "all 0.5s ease-in");
+					u.a.setOpacity(spec, 0);
+				}
+				else {
+					spec.transitioned();
+				}
+			}
+			comp.spec1 = u.qs(".hotspot1", comp);
+			comp.spec1.comp = comp;
+			comp.spec1.banner = this;
+			u.a.transition(comp.spec1, "none");
+			u.a.setOpacity(comp.spec1, 0);
+			comp.spec2 = u.qs(".hotspot2", comp);
+			comp.spec2.comp = comp;
+			comp.spec2.banner = this;
+			u.a.transition(comp.spec2, "none");
+			u.a.setOpacity(comp.spec2, 0);
+		}
+		banner.cleared = function() {
+			this.innerHTML = this._initcontent;
+		}
+		banner.ready = function(play) {
+			document.body.transitioned = function() {
+				u.a.transition(this, "none");
+				this.transitioned = null;
+			}
+			u.a.transition(document.body, "all 0.3s ease-in");
+			u.as(document.body, "backgroundColor", u.gcs(this, "background-color"));
+			this._autoplay = play;
+			this._isreset = false;
+			this._iscleared = false;
+			u.o.banner.init(this);
+			this.h2 = u.qs("h2", this);
+			this.h2.banner = this;
+			this.h2.org_text = this.h2.innerHTML;
+			this.hint1 = u.qs(".hint1", this);
+			this.hint1.banner = this;
+			this.comp1 = u.qs(".comp.comp1", this);
+			this.comp2 = u.qs(".comp.comp2", this);
+			this.comp3 = u.qs(".comp.comp3", this);
+			this.logo = u.qs(".logo", this);
+			this.learnmore_irl = u.qs(".learnmore.irl", this);
+			this.learnmore_irl.banner = this;
+			u.link(this.learnmore_irl);
+			this.learnmore_irl.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.learnmore_irl.clicked = function() {
+				window.open(this.url, "_blank");
+			}
+			this.learnmore_web = u.qs(".learnmore.web", this);
+			this.learnmore_web.banner = this;
+			u.link(this.learnmore_web);
+			this.learnmore_web.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.learnmore_web.clicked = function() {
+				window.open(this.url, "_blank");
+			}
+			this.fullclick = u.ae(this, "div", {"class":"fullclick"});
+			this.fullclick.banner = this;
+			u.e.click(this.fullclick);
+			this.fullclick.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.fullclick.clicked = function() {
+				window.open(this.banner.learnmore.url, "_blank");
+			}
+			u.a.transition(this.hint1, "none");
+			u.a.translate(this.hint1, this.offsetWidth, 0);
+			u.as(this.hint1, "display", "block");
+			u.a.transition(this.hint1, "all 0.5s ease-in");
+			u.a.setOpacity(this.hint1, 1);
+			u.a.transition(this.comp1, "none");
+			u.a.translate(this.comp1, this.offsetWidth, 0);
+			u.as(this.comp1, "display", "block");
+			u.a.setOpacity(this.comp1, 1);
+			u.a.transition(this.comp2, "none");
+			u.a.translate(this.comp2, this.offsetWidth, 0);
+			u.as(this.comp2, "display", "block");
+			u.a.setOpacity(this.comp2, 1);
+			u.a.transition(this.comp3, "none");
+			u.a.translate(this.comp3, this.offsetWidth, 0);
+			u.as(this.comp3, "display", "block");
+			u.a.setOpacity(this.comp3, 1);
+			u.a.transition(this.learnmore_irl, "none");
+			u.as(this.learnmore_irl, "display", "none");
+			u.a.translate(this.learnmore_irl, this.offsetWidth, 0);
+			u.a.setOpacity(this.learnmore_irl, 1);
+			u.a.transition(this.learnmore_web, "none");
+			u.as(this.learnmore_web, "display", "none");
+			u.a.translate(this.learnmore_web, this.offsetWidth, 0);
+			u.a.setOpacity(this.learnmore_web, 1);
+			this.preload(85, 80, "sq1", 1500);
+		}
+		banner.sq1 = function() {
+			u.a.transition(this.h2, "all 0.4s ease-in");
+			u.a.translate(this.h2, -(this.offsetWidth), 0);
+			this.t_delay = u.t.setTimer(this, this.c1enter, 500);
+			this.activateComp(this.comp1);
+		}
+		banner.c1enter = function() {
+			u.a.transition(this.comp1, "all 0.3s ease-in");
+			u.a.translate(this.comp1, 0, 0);
+			this.setup(80, 85, "sq2");
+		}
+		banner.sq2 = function() {
+			this.preload(0, 26, "sq3", 1000);
+		}
+		banner.sq3 = function() {
+			this.c1turn1in();
+		}
+		banner.c1turn1in = function() {
+			this.setup(0, 7, "c1turn1out");
+		}
+		banner.c1turn1out = function() {
+			this.setup(7, 0, "c1turn2in");
+		}
+		banner.c1turn2in = function() {
+			this.setup(8, 17, "c1turn2out");
+		}
+		banner.c1turn2out = function() {
+			this.setup(17, 8, "c1exit");
+		}
+		banner.c1exit = function() {
+			u.a.transition(this.comp1, "all 0.3s ease-in");
+			u.a.translate(this.comp1, -(this.offsetWidth), 0);
+			this.setup(18, 22, "c2enter");
+			this.activateComp(this.comp2);
+		}
+		banner.c2enter = function() {
+			u.a.transition(this.comp2, "all 0.3s ease-in");
+			u.a.translate(this.comp2, 0, 0);
+			this.setup(22, 26, "sq6");
+		}
+		banner.sq6 = function() {
+			this.preload(26, 56, "sq7", 1000);
+		}
+		banner.sq7 = function() {
+			this.c2turn1in();
+		}
+		banner.c2turn1in = function() {
+			this.setup(26, 35, "c2turn1out");
+		}
+		banner.c2turn1out = function() {
+			this.setup(35, 26, "c2turn2in");
+		}
+		banner.c2turn2in = function() {
+			this.setup(36, 44, "c2turn2out");
+		}
+		banner.c2turn2out = function() {
+			this.setup(44, 36, "c2exit");
+		}
+		banner.c2exit = function() {
+			u.a.transition(this.comp2, "all 0.3s ease-in");
+			u.a.translate(this.comp2, -(this.offsetWidth), 0);
+			this.setup(45, 50, "c3enter");
+			this.activateComp(this.comp3);
+		}
+		banner.c3enter = function() {
+			u.a.transition(this.comp3, "all 0.3s ease-in");
+			u.a.translate(this.comp3, 0, 0);
+			this.setup(50, 56, "sq10");
+		}
+		banner.sq10 = function() {
+			this.preload(56, 80, "sq11", 1000);
+		}
+		banner.sq11 = function() {
+			this.c3turn1in();
+		}
+		banner.c3turn1in = function() {
+			this.setup(56, 64, "c3turn1out");
+		}
+		banner.c3turn1inWait = function() {
+			this.t_delay = u.t.setTimer(this, this.c3turn1out, 400);
+		}
+		banner.c3turn1out = function() {
+			this.setup(64, 56, "c3turn2in");
+		}
+		banner.c3turn2in = function() {
+			this.setup(66, 73, "c3turn2out");
+		}
+		banner.c3turn2out = function() {
+			this.setup(73, 66, "c3exit");
+		}
+		banner.c3exit = function() {
+			u.a.transition(this.comp3, "all 0.3s ease-in");
+			u.a.translate(this.comp3, -(this.offsetWidth), 0);
+			this.setup(74, 80, "sq14");
+		}
+		banner.sq14 = function() {
+			u.a.transition(this.hint1, "all 0.3s ease-in");
+			u.a.translate(this.hint1, 0, 0);
+			this.t_delay = u.t.setTimer(this, this.sq15, 1600);
+		}
+		banner.sq15 = function() {
+			u.a.transition(this.hint1, "all 0.3s ease-in");
+			u.a.translate(this.hint1, -(this.offsetWidth), 0);
+			u.a.transition(this.logo, "all 0.4s ease-in");
+			u.a.translate(this.logo, -(this.offsetWidth), 0);
+			this.t_delay = u.t.setTimer(this, this.sq16, 500);
+		}
+		banner.sq16 = function() {
+			u.a.transition(this.logo, "none");
+			u.a.translate(this.logo, this.offsetWidth, 0);
+			u.ac(this.logo, "exit");
+			u.as(this.logo, "display", "block");
+			u.a.transition(this.logo, "all 0.4s ease-in");
+			u.as(this.learnmore_irl, "display", "block");
+			u.a.transition(this.learnmore_irl, "all 0.4s ease-in");
+			u.as(this.learnmore_web, "display", "block");
+			u.a.transition(this.learnmore_web, "all 0.4s ease-in");
+			u.a.translate(this.logo, 0, 0);
+			u.a.translate(this.learnmore_irl, 0, 0);
+			u.a.translate(this.learnmore_web, 0, 0);
+		}
+	}
+}
+/*i-banner-d.js*/
+Util.Objects["hwundwind"] = new function() {
+	this.init = function(banner) {
+		banner._initialized = true;
+		banner._version = "tablet,full";
+		banner.t_delay = false;
+		banner._isreset = true;
+		banner._iscleared = true;
+		banner.selected_view = false;
+		banner.t_next = false;
+		banner._initcontent = banner.innerHTML;
+		banner._images = new Array();
+		for(i = 0; i <= 147; i++) {
+			banner._images.push("/win8/funstuff/v8/img/d/PicturePassword_V004_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
+		}
+		banner._framerate = 1000/12; // 12 frames a second
+		banner.hoverHint = function() {
+			this.hint1.transitioned = function() {
+				this.transitioned = null;
+				u.a.transition(this, "none");
+				this.transitioned = function() {
+					this.transitioned = null;
+					u.a.transition(this, "none");
+					this.banner.hoverHint();
+				}
+				u.a.transition(this, "all 1s ease-in-out");
+				u.a.setBgPos(this, 130, "50%");
+			}
+			u.a.transition(this.hint1, "all 1s ease-in-out");
+			u.a.setBgPos(this.hint1, 135, "50%");
+		}
+		banner.activateView = function(view) {
+			view.banner = this;
+			view._id = view.className.match(/\d/);
+			u.a.transition(view, "all 0.2s ease-in");
+			u.e.click(view);
+			view.clicked = function() {
+				this.banner.selectView(this._id);
+			}
+		}
+		banner.nextView = function() {
+			this.selectView(this.selected_index+1);
+		}
+		banner.selectView = function(index) {
+			u.t.resetTimer(this.t_next);
+			this.stopAnimation();
+			if(index < 1) {
+				index = 3;
+			}
+			else if(index > 3) {
+				index = 1;
+			}
+			if(!this.selected_view) {
+				this.selected_index = index;
+				this.selected_view = this["view"+index];
+				u.ac(this.selected_view, "selected");
+				this.viewEnded = function() {
+					this.viewEnded = null;
+					this.t_next = u.t.setTimer(this, this.nextView, 4000);
+				}
+				this.selected_view._iscleared = false;
+				this["v"+this.selected_view._id+"start"]();
+			}
+			else {
+				this.org_view = this.selected_view;
+				this.selected_index = index;
+				this.selected_view = this["view"+index];
+				u.rc(this.org_view, "selected");
+				u.ac(this.selected_view, "selected");
+				this.viewExited = function() {
+					this.viewEnded = function() {
+						this.viewEnded = null;
+						this.t_next = u.t.setTimer(this, this.nextView, 3000);
+					}
+					this.org_view._iscleared = true;
+					this.selected_view._iscleared = false;
+					this["v"+this.selected_view._id+"start"]();
+				}
+				if(!this.org_view._iscleared) {
+					this["v"+this.org_view._id+"exit"]();
+				}
+				else {
+					this.viewExited();
+				}
+			}
+		}
+		banner.cleared = function() {
+			this.innerHTML = this._initcontent;
+			u.t.resetTimer(this.t_next);
+			this.selected_view = false;
+		}
+		banner.ready = function(play) {
+			document.body.transitioned = function() {
+				u.a.transition(this, "none");
+				this.transitioned = null;
+			}
+			u.a.transition(document.body, "all 0.3s ease-in");
+			u.as(document.body, "backgroundColor", u.gcs(this, "background-color"));
+			this._autoplay = play;
+			this._isreset = false;
+			this._iscleared = false;
+			u.o.banner.init(this);
+			this.intro_text = "Lösenord123";
+			this.h2 = u.qs("h2", this);
+			this.h2.banner = this;
+			this.hint1 = u.qs("p.hint1", this);
+			this.hint1.banner = this;
+			this.views = u.qs("ul.views", this);
+			this.views.banner = this;
+			this.view1 = u.qs("ul.views .view1", this);
+			this.view2 = u.qs("ul.views .view2", this);
+			this.view3 = u.qs("ul.views .view3", this);
+			this.logo = u.qs(".logo", this);
+			this.learnmore = u.qs(".learnmore", this);
+			this.learnmore.banner = this;
+			u.link(this.learnmore);
+			this.learnmore.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.learnmore.clicked = function() {
+				window.open(this.url, "_blank");
+			}
+			u.a.transition(this.h2, "none");
+			u.a.translate(this.h2, -this.offsetWidth, 0);
+			u.as(this.h2, "display", "block");
+			u.a.setOpacity(this.h2, 1);
+			u.a.transition(this.hint1, "none");
+			u.a.translate(this.hint1, -this.offsetWidth, 0);
+			u.as(this.hint1, "display", "block");
+			u.a.setOpacity(this.hint1, 1);
+			u.a.transition(this.views, "none");
+			u.a.translate(this.views, this.offsetWidth, 0);
+			u.as(this.views, "display", "block");
+			u.a.setOpacity(this.views, 1);
+			this.t_delay = u.t.setTimer(this, this.sq1, 300);
+			this.preload(0, this.nodes.length-1, "false", 2500);
+		}
+		banner.sq1 = function() {
+			this.intro = u.ae(this, "div", {"class":"intro"});
+			this.intro.banner = this;
+			this.intro.innerHTML = this.intro.innerHTML.replace("_", "") + this.intro_text[0] + "_";
+			this.t_delay = u.t.setTimer(this, this.sq2, 100);
+		}
+		banner.sq2 = function() {
+			this.intro.innerHTML = this.intro.innerHTML.replace("_", "") + this.intro_text[1] + "_";
+			this.t_delay = u.t.setTimer(this, this.sq3, 200);
+		}
+		banner.sq3 = function() {
+			this.intro.innerHTML = this.intro.innerHTML.replace("_", "") + this.intro_text[2] + "_";
+			this.t_delay = u.t.setTimer(this, this.sq4, 300);
+		}
+		banner.sq4 = function() {
+			this.intro.innerHTML = this.intro.innerHTML.replace("_", "") + this.intro_text[3] + "_";
+			this.t_delay = u.t.setTimer(this, this.sq5, 200);
+		}
+		banner.sq5 = function() {
+			this.intro.innerHTML = this.intro.innerHTML.replace("_", "") + this.intro_text[4] + "_";
+			this.t_delay = u.t.setTimer(this, this.sq6, 500);
+		}
+		banner.sq6 = function() {
+			this.intro.innerHTML = this.intro.innerHTML.replace("_", "") + this.intro_text[5] + "_";
+			this.t_delay = u.t.setTimer(this, this.sq7, 100);
+		}
+		banner.sq7 = function() {
+			this.intro.innerHTML = this.intro.innerHTML.replace("_", "") + this.intro_text[6] + "_";
+			this.t_delay = u.t.setTimer(this, this.sq8, 100);
+		}
+		banner.sq8 = function() {
+			this.intro.innerHTML = this.intro.innerHTML.replace("_", "") + this.intro_text[7] + "_";
+			this.t_delay = u.t.setTimer(this, this.sq9, 300);
+		}
+		banner.sq9 = function() {
+			this.intro.innerHTML = this.intro.innerHTML.replace("_", "") + this.intro_text[8] + "_";
+			this.t_delay = u.t.setTimer(this, this.sq10, 100);
+		}
+		banner.sq10 = function() {
+			this.intro.innerHTML = this.intro.innerHTML.replace("_", "") + this.intro_text[9] + "_";
+			this.t_delay = u.t.setTimer(this, this.sq11, 200);
+		}
+		banner.sq11 = function() {
+			this.intro.innerHTML = this.intro.innerHTML.replace("_", "") + this.intro_text[10] + "_";
+			this.t_delay = u.t.setTimer(this, this.sq12, 300);
+		}
+		banner.sq12 = function() {
+			this.intro.innerHTML = this.intro.innerHTML.replace("_", "");
+			this.t_delay = u.t.setTimer(this, this.sq13, 400);
+		}
+		banner.sq13 = function() {
+			this.intro.innerHTML += "_";
+			this.t_delay = u.t.setTimer(this, this.sq14, 400);
+		}
+		banner.sq14 = function() {
+			this.intro.innerHTML = this.intro.innerHTML.replace("_", "");
+			this.t_delay = u.t.setTimer(this, this.sq15, 400);
+		}
+		banner.sq15 = function() {
+			this.intro.innerHTML += "_";
+			this.t_delay = u.t.setTimer(this, this.sq16, 400);
+		}
+		banner.sq16 = function() {
+			this.intro.innerHTML = this.intro.innerHTML.replace("_", "");
+			if(this._isloading) {
+				this.t_delay = u.t.setTimer(this, this.sq15, 400);
+			}
+			else {
+				this.t_delay = u.t.setTimer(this, this.sq17, 100);
+			}
+		}
+		banner.sq17 = function() {
+			u.a.transition(this.learnmore, "all 0.5s ease-in");
+			u.a.setOpacity(this.learnmore, 1);
+			u.a.transition(this.logo, "all 0.5s ease-in");
+			u.a.setOpacity(this.logo, 1);
+			u.a.transition(this.intro, "all 0.5s ease-out");
+			u.a.translate(this.intro, -this.offsetWidth, 0);
+			this.activateView(this.view1);
+			this.activateView(this.view2);
+			this.activateView(this.view3);
+			this.selectView(1);
+			this.t_delay = u.t.setTimer(this, this.sq18, 400);
+		}
+		banner.sq18 = function() {
+			u.a.transition(this.h2, "all 0.4s ease-in");
+			u.a.translate(this.h2, 0, 0);
+			u.a.transition(this.views, "all 0.4s ease-in");
+			u.a.translate(this.views, 0, 0);
+			u.a.transition(this.hint1, "all 0.4s ease-in");
+			u.a.translate(this.hint1, 0, 0);
+			this.hoverHint();
+		}
+		banner.v1start = function() {
+			this.setup(0, 43, "viewEnded");
+		}
+		banner.v2start = function() {
+			this.setup(100, 138, "viewEnded");
+		}
+		banner.v3start = function() {
+			this.setup(53, 91, "viewEnded");
+		}
+		banner.v1exit = function() {
+			if(this._current_frame < 10) {
+				this.setup(this._current_frame, 0, "viewExited");
+			}
+			else {
+				this.setup(43, 50, "viewExited");
+			}
+		}
+		banner.v2exit = function() {
+			if(this._current_frame < 110) {
+				this.setup(this._current_frame, 100, "viewExited");
+			}
+			else {
+				this.setup(138, 147, "viewExited");
+			}
+		}
+		banner.v3exit = function() {
+			if(this._current_frame < 63) {
+				this.setup(this._current_frame, 53, "viewExited");
+			}
+			else {
+				this.setup(91, 100, "viewExited");
+			}
+		}
+	}
+}
+/*i-banner-d-mobile.js*/
+Util.Objects["hwundwind_mobile"] = new function() {
+	this.init = function(banner) {
+		banner._initialized = true;
+		banner._version = "mobile";
+		banner.t_delay = false;
+		banner._isreset = true;
+		banner._iscleared = true;
+		banner._initcontent = banner.innerHTML;
+		banner._images = new Array();
+		for(i = 0; i <= 98; i++) {
+			banner._images.push("/win8/funstuff/v8/img/d_mobile/picture_password_mobil_Final_0" + ((i > 9 ? i > 99 ? "0" : "00" : "000") + i) + ".jpg");
+		}
+		banner._framerate = 1000/12; // 12 frames a second
+		banner.cleared = function() {
+			this.innerHTML = this._initcontent;
+		}
+		banner.ready = function(play) {
+			document.body.transitioned = function() {
+				u.a.transition(this, "none");
+				this.transitioned = null;
+			}
+			u.a.transition(document.body, "all 0.3s ease-in");
+			u.as(document.body, "backgroundColor", u.gcs(this, "background-color"));
+			this._autoplay = play;
+			this._isreset = false;
+			this._iscleared = false;
+			u.o.banner.init(this);
+			this.h2 = u.qs("h2", this);
+			this.h2.banner = this;
+			this.h3 = u.qs("h3", this);
+			this.h3.banner = this;
+			this.logo = u.qs(".logo", this);
+			this.learnmore = u.qs(".learnmore", this);
+			this.learnmore.banner = this;
+			u.link(this.learnmore);
+			this.learnmore.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.learnmore.clicked = function() {
+				window.open(this.url, "_blank");
+			}
+			this.fullclick = u.ae(this, "div", {"class":"fullclick"});
+			this.fullclick.banner = this;
+			u.e.click(this.fullclick);
+			this.fullclick.moved = function(event) {
+				u.e.resetEvents(this);
+			}
+			this.fullclick.clicked = function() {
+				window.open(this.banner.learnmore.url, "_blank");
+			}
+			u.a.transition(this.h3, "none");
+			u.a.translate(this.h3, this.offsetWidth, 0);
+			u.as(this.h3, "display", "block");
+			u.a.setOpacity(this.h3, 1);
+			u.a.transition(this.learnmore, "none");
+			u.as(this.learnmore, "display", "none");
+			u.a.translate(this.learnmore, this.offsetWidth, 0);
+			u.a.setOpacity(this.learnmore, 1);
+			this.preload(0, 50, "sq1", 1500);
+		}
+		banner.sq1 = function() {
+			u.a.transition(this.h2, "all 0.4s ease-in");
+			u.a.translate(this.h2, -(this.offsetWidth), 0);
+			this.t_delay = u.t.setTimer(this, this.sq2, 500);
+		}
+		banner.sq2 = function() {
+			this.setup(0, 50, "sq3");
+		}
+		banner.sq3 = function() {
+			u.a.transition(this.h3, "all 0.4s ease-in");
+			u.a.translate(this.h3, 0, 0);
+			this.preload(51, 98, "sq4", 2500);
+		}
+		banner.sq4 = function() {
+			u.a.transition(this.h3, "all 0.4s ease-in");
+			u.a.translate(this.h3, -(this.offsetWidth), 0);
+			this.t_delay = u.t.setTimer(this, this.sq5, 500);
+		}
+		banner.sq5 = function() {
+			this.setup(51, 98, "sq6");
+		}
+		banner.sq6 = function() {
+			u.a.transition(this.h2, "none");
+			u.a.translate(this.h2, this.offsetWidth, 0);
+			u.a.transition(this.h2, "all 0.4s ease-in");
+			u.a.translate(this.h2, 0, 0);
+			this.t_delay = u.t.setTimer(this, this.sq7, 2500);
+		}
+		banner.sq7 = function() {
+			u.a.transition(this.h2, "all 0.4s ease-in");
+			u.a.translate(this.h2, -(this.offsetWidth), 0);
+			u.a.transition(this.logo, "all 0.4s ease-in");
+			u.a.translate(this.logo, -(this.offsetWidth), 0);
+			this.t_delay = u.t.setTimer(this, this.sq8, 500);
+		}
+		banner.sq8 = function() {
+			u.a.transition(this.logo, "none");
+			u.a.translate(this.logo, this.offsetWidth, 0);
+			u.ac(this.logo, "exit");
+			u.as(this.logo, "display", "block");
+			u.a.transition(this.logo, "all 0.4s ease-in");
+			u.a.transition(this.learnmore, "none");
+			u.a.translate(this.learnmore, this.offsetWidth, 0);
+			u.as(this.learnmore, "display", "block");
+			u.a.transition(this.learnmore, "all 0.4s ease-in");
+			u.a.translate(this.logo, 0, 0);
+			u.a.translate(this.learnmore, 0, 0);
+		}
+	}
+}
+/*i-banners.js*/
+Util.Objects["banners"] = new function() {
+	this.init = function(controller) {
+		u.bug_position = "fixed";
+		u.bug_force = true;
+		u.ac(controller, "hw_banner_controller");
+		controller._bg_color = u.gcs(document.body, "background-color");
+		controller.banners = new Array();
+		controller.banners.push(u.qs("#hwundwina"));
+		controller.banners.push(u.qs("#hwundwinb"));
+		controller.banners.push(u.qs("#hwundwinc"));
+		controller.banners.push(u.qs("#hwundwind"));
+		controller.t_scroll = false;
+		controller.current_state = false;
+		controller.globalReset = function() {
+			var i, banner;
+			for(i = 0; banner = this.banners[i]; i++) {
+				if(banner.in_focus) {
+					banner._reset(this.current_state);
+				}
+				else {
+					if(!u.hc(banner, this.current_state)) {
+						u.rc(banner, "full|tablet|mobile", 1);
+						u.ac(banner, this.current_state);
+					}
+				}
+			}
+			this.t_scroll = u.t.setTimer(this, this.scrollHandler, 500);
+		}
+		window.scrollHandler = function() {
+			u.qs(".hw_banner_controller").scrollHandler();
+		}
+		controller.scrollHandler = function() {
+			var scrolled_y = u.scrollY();
+			var browser_height = u.browserH();
+			var margin = (browser_height - browser_height*0.8)/2;
+			var focus_top = scrolled_y + margin;
+			var focus_bottom = scrolled_y + browser_height - margin;
+			var i, banner;
+			for(i = 0; banner = this.banners[i]; i++) {
+				banner.top_y = u.absY(banner);
+				banner.center_y = banner.top_y + (banner.offsetHeight/2);
+				banner.bottom_y = banner.top_y + banner.offsetHeight;
+				if(banner.center_y > focus_top && banner.center_y < focus_bottom) {
+					if(!banner.in_focus || banner._iscleared) {
+						if(!banner._initialized || !banner._version.match(this.current_state)) {
+							if(this.current_state == "mobile") {
+								u.o[banner.id+"_"+this.current_state].init(banner);
+							}
+							else {
+								u.o[banner.id].init(banner);
+							}
+						}
+						else if(banner._iscleared) {
+							banner.ready(true);
+						}
+					}
+					else {
+						banner._autoplay = true;
+					}
+					banner.in_focus = true;
+				}
+				else {
+					if(banner.in_focus && !banner._isreset) {
+						banner._reset(this.current_state);
+						banner.in_focus = false;
+					}
+				}
+			}
+		}
+		u.e.addEvent(window, "scroll", window.scrollHandler);
+		window.resizeHandler = function() {
+			u.qs(".hw_banner_controller").resizeHandler();
+		}
+		controller.resizeHandler = function() {
+			u.t.resetTimer(this.t_scroll);
+			if(u.browserW() < 768) {
+				if(this.current_state != "mobile") {
+					this.current_state = "mobile";
+				}
+			}
+			else if(u.browserW() < 980) {
+				if(this.current_state != "tablet") {
+					this.current_state = "tablet";
+				}
+			}
+			else {
+				if(this.current_state != "full") {
+					this.current_state = "full";
+				}
+			}
+			this.globalReset();
+		}
+		u.e.addEvent(window, "resize", window.resizeHandler);
+		controller.resizeHandler();
 	}
 }

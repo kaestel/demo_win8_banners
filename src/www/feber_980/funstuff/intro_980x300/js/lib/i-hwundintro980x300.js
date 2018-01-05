@@ -1,4 +1,4 @@
-Util.Objects["hwundwina"] = new function() {
+Util.Objects["hwundintro980x300"] = new function() {
 	this.init = function(banner) {
 //		u.bug("init")
 
@@ -13,7 +13,7 @@ Util.Objects["hwundwina"] = new function() {
 		// animation frames
 		banner._images = new Array();
 		for(i = 0; i <= 84; i++) {
-			banner._images.push("/win8/funstuff/v8/img/a/IntroBanner_V003_" + ((i > 9 ? i > 99 ? i > 999 ? "0" : "00" : "000" : "0000") + i) + ".jpg");
+			banner._images.push("/feber_980/funstuff/intro_980x300/img/sequence/IntroBanner_V003_" + ((i > 9 ? i > 99 ? i > 999 ? "0" : "00" : "000" : "0000") + i) + ".jpg");
 		}
 		banner._framerate = 1000/12; // 12 frames a second
 
@@ -31,13 +31,13 @@ Util.Objects["hwundwina"] = new function() {
 
 //			HW_tailsweepTrack(17331106);
 
-			document.body.transitioned = function() {
-				u.a.transition(this, "none");
-				this.transitioned = null;
-			}
-
-			u.a.transition(document.body, "all 0.3s ease-in");
-			u.as(document.body, "backgroundColor", u.gcs(this, "background-color"));
+			// document.body.transitioned = function() {
+			// 	u.a.transition(this, "none");
+			// 	this.transitioned = null;
+			// }
+			// 
+			// u.a.transition(document.body, "all 0.3s ease-in");
+			// u.as(document.body, "backgroundColor", u.gcs(this, "background-color"));
 
 
 			this._autoplay = play;
@@ -130,7 +130,7 @@ Util.Objects["hwundwina"] = new function() {
 			this.prerollclick.banner = this;
 			u.e.click(this.prerollclick);
 			this.prerollclick.clicked = function() {
-				window.open("http://script.tailsweep.com/csClick/17331107/http://www.youtube.com/watch?v=qOpt8kOvhmY", "_blank");
+				window.open("http://www.youtube.com/watch?v=qOpt8kOvhmY", "_blank");
 			}
 
 		}

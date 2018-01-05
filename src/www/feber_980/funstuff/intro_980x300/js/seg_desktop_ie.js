@@ -1,5 +1,5 @@
 
-/*seg_desktop.js*/
+/*seg_desktop_ie.js*/
 if(!u || !Util) {
 	var u, Util = u = new function() {}
 	u.version = 0.6;
@@ -2327,6 +2327,211 @@ Util.setHashPath = function(path) {
 	location.hash = path;
 	return Util.getHashPath();
 }
+this.transition = function(e, transition) {
+	var duration = transition.match(/[0-9.]+[ms]+/g);
+	if(duration) {
+		var d = duration[0];
+		e.duration = d.match("ms") ? parseFloat(d) : (parseFloat(d) * 1000);
+	}
+	else {
+		e.duration = false;
+	}
+}
+u.a.setOpacity = function(e, opacity) {
+	if(e.duration && !this.support()) {
+		e.o_start = e._opacity ? e._opacity : u.gcs(e, "opacity");
+		e.o_transitions = e.duration/50;
+		e.o_change = (opacity - e.o_start) / e.o_transitions;
+		e.o_progress = 0;
+		e.o_transitionTo = function() {
+			++this.o_progress;
+			var new_opacity = (Number(this.o_start) + Number(this.o_progress * this.o_change));
+			u.as(this, "opacity", new_opacity);
+		}
+		for(var i = 0; i < e.o_transitions; i++) {
+			u.t.setTimer(e, e.o_transitionTo, 50 * i);
+		}
+		if(typeof(e.transitioned) == "function") {
+			u.t.setTimer(e, e.transitioned, e.duration);
+		}
+	}
+	else {
+		e.style.opacity = opacity;
+	}
+	e._opacity = opacity;
+	e.transition_timestamp = new Date().getTime();
+	e.offsetHeight;
+}
+u.a.setWidth = function(e, width) {
+	if(e.duration && !this.support()) {
+		e.w_start = e._width ? e._width : u.gcs(e, "width").replace("px", "");
+		e.w_transitions = e.duration/50;
+		e.w_change = (width - e.w_start) / e.w_transitions;
+		e.w_progress = 0;
+		e.w_transitionTo = function() {
+			++this.w_progress;
+			var new_width = (Number(this.w_start) + Number(this.w_progress * this.w_change));
+			u.as(this, "width", new_width+"px");
+		}
+		for(var i = 0; i < e.w_transitions; i++) {
+			u.t.setTimer(e, e.w_transitionTo, 50 * i);
+		}
+		if(typeof(e.transitioned) == "function") {
+			u.t.setTimer(e, e.transitioned, e.duration);
+		}
+	}
+	else {
+		var width_px = (width == "auto" ? width : width+"px");
+		u.as(e, "width", width_px);
+	}
+	e._width = width;
+	e.transition_timestamp = new Date().getTime();
+	e.offsetHeight;
+}
+u.a.setHeight = function(e, height) {
+	if(e.duration && !this.support()) {
+		e.h_start = e._height ? e._height : u.gcs(e, "height").replace("px", "");
+		e.h_transitions = e.duration/50;
+		e.h_change = (height - e.h_start) / e.h_transitions;
+		e.h_progress = 0;
+		e.h_transitionTo = function() {
+			++this.h_progress;
+			var new_height = (Number(this.h_start) + Number(this.h_progress * this.h_change));
+			u.as(this, "height", new_height+"px");
+		}
+		for(var i = 0; i < e.h_transitions; i++) {
+			u.t.setTimer(e, e.h_transitionTo, 50 * i);
+		}
+		if(typeof(e.transitioned) == "function") {
+			u.t.setTimer(e, e.transitioned, e.duration);
+		}
+	}
+	else {
+		var height_px = (height == "auto" ? height : height+"px");
+		u.as(e, "height", height_px);
+	}
+	e._height = height;
+	e.transition_timestamp = new Date().getTime();
+	e.offsetHeight;
+}
+u.a.setBgPos = function(node, x, y) {
+	if(node.duration && !this.support()) {
+		node._bg_same_x = false;
+		node._bg_same_y = false;
+		node.bg_transitions = node.duration/50;
+		if(u.gcs(node, "background-position-x") != x) {
+			node.bg_start_x = node._bg_x ? node._bg_x : u.gcs(node, "background-position-x").replace("px", "");
+			node.bg_change_x = (x - node.bg_start_x) / node.bg_transitions;
+		}
+		else {
+			node._bg_same_x = true;
+		}
+		if(u.gcs(node, "background-position-y") != y) {
+			node.bg_start_y = node._bg_y ? node._bg_y : u.gcs(node, "background-position-y").replace("px", "");
+			node.bg_change_y = (y - node.bg_start_y) / node.bg_transitions;
+		}
+		else {
+			node._bg_same_y = true;
+		}
+		node.bg_progress = 0;
+		node.bg_transitionTo = function() {
+			++this.bg_progress;
+			var new_x, new_y;
+			if(!this._bg_same_x) {
+				new_x = Math.round((Number(this.bg_start_x) + Number(this.bg_progress * this.bg_change_x)));
+			}
+			else {
+				new_x = this._bg_x;
+			}
+			if(!this._bg_same_y) {
+				new_y = Math.round((Number(this.bg_start_y) + Number(this.bg_progress * this.bg_change_y)));
+			}
+			else {
+				new_y = this._bg_y;
+			}
+			u.as(this, "backgroundPosition", (new_x.toString().match(/\%|top|left|right|center|bottom/) ? new_x : new_x + "px") + " " + (new_y.toString().match(/\%|top|left|right|center|bottom/) ? new_y : new_y + "px"));
+			this.offsetHeight;
+		}
+		if(!node._bg_same_x || !node._bg_same_x) {
+			for(var i = 0; i < node.bg_transitions; i++) {
+				u.t.setTimer(node, node.bg_transitionTo, 50 * i);
+			}
+			if(typeof(node.transitioned) == "function") {
+				u.t.setTimer(node, node.transitioned, node.duration);
+			}
+		}
+	}
+	else {
+		u.as(node, "backgroundPosition", (x.toString().match(/\%|top|left|right|center|bottom/) ? x : x + "px") + " " + (y.toString().match(/\%|top|left|right|center|bottom/) ? y : y + "px"));
+	}
+	node._bg_x = x;
+	node._bg_y = y;
+	node.transition_timestamp = new Date().getTime();
+	node.offsetHeight;
+}
+u.a.translate = function(e, x, y) {
+	var i;
+	if(e.translate_offset_x == undefined) {
+		var abs_left = u.gcs(e, "left");
+		var abs_top = u.gcs(e, "top");
+		if(abs_left.match(/px/)) {
+			e.translate_offset_x = parseInt(abs_left);
+		}
+		else {
+			e.translate_offset_x = u.relX(e);
+		}
+		if(abs_top.match(/px/)) {
+			e.translate_offset_y = parseInt(abs_top);
+		}
+		else {
+			e.translate_offset_y = u.relY(e);
+		}
+		e.element_x = e.element_x ? e.element_x : 0;
+		e.element_y = e.element_y ? e.element_y : 0;
+		e._x = e._x ? e._x : 0;
+		e._y = e._y ? e._y : 0;
+		if(this.support()) {
+			e.style[this.variant()+"Transition"] = "none";
+		}
+	}
+	if(e.duration) {
+		e.x_start = e._x;
+		e.y_start = e._y;
+		e.translate_transitions = e.duration/25;
+		e.translate_progress = 0;
+		e.x_change = (x - e.x_start) / e.translate_transitions;
+		e.y_change = (y - e.y_start) / e.translate_transitions;
+		e.translate_transitionTo = function(event) {
+			++this.translate_progress;
+			var new_x = (Number(this.x_start) + Number(this.translate_progress * this.x_change));
+			var new_y = (Number(this.y_start) + Number(this.translate_progress * this.y_change));
+			e.style["msTransform"] = "translate("+ new_x + "px, " + new_y +"px)";
+			if(this.translate_progress < this.translate_transitions) {
+				this.t_transition = u.t.setTimer(this, this.translate_transitionTo, 25);
+			}
+			else {
+				if(typeof(this.transitioned) == "function") {
+					this.transitioned(event);
+				}
+			}
+		}
+		e.translate_transitionTo();
+	}
+	else {
+		e.style["msTransform"] = "translate("+ x + "px, " + y +"px)";
+	}
+	e.element_x = x;
+	e.element_y = y;
+	e._x = x;
+	e._y = y;
+	e.transition_timestamp = new Date().getTime();
+	e.offsetHeight;
+}
+u.a._callback = function(event) {
+	if(typeof(this.transitioned) == "function") {
+		this.transitioned(event);
+	}
+}
 
 /*u-init-domready.js*/
 if(!u.o) {
@@ -2440,7 +2645,7 @@ Util.Objects["hwundintro980x300"] = new function() {
 			this.prerollclick.banner = this;
 			u.e.click(this.prerollclick);
 			this.prerollclick.clicked = function() {
-				window.open("http://script.tailsweep.com/csClick/17331107/http://www.youtube.com/watch?v=qOpt8kOvhmY", "_blank");
+				window.open("http://www.youtube.com/watch?v=qOpt8kOvhmY", "_blank");
 			}
 		}
 		banner.ready(true);

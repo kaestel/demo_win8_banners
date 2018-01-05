@@ -2887,7 +2887,7 @@ Util.Objects["hwundwina"] = new function() {
 			this.prerollclick.banner = this;
 			u.e.click(this.prerollclick);
 			this.prerollclick.clicked = function() {
-				window.open("http://script.tailsweep.com/csClick/17331107/http://www.youtube.com/watch?v=qOpt8kOvhmY", "_blank");
+				window.open("http://www.youtube.com/watch?v=qOpt8kOvhmY", "_blank");
 			}
 		}
 		banner.ready(true);
